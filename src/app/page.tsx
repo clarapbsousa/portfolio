@@ -16,7 +16,6 @@ export default function Home() {
               alt="Avatar"
               className="landing__avatar-image"
               fill
-              sizes="176px"
               priority
             />
           </div>

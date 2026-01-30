@@ -56,7 +56,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 24px;
+  padding: 40px 24px 10px;
 }
 
 .landing__title {
@@ -81,6 +81,7 @@ body {
 }
 
 .landing__avatar {
+  margin-bottom: 4.5em;
   width: 25em;
   height: 25em;
   border-radius: 50%;
@@ -124,8 +125,8 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  padding-top: 2.5em;
+  gap: 36px;
+  padding-top: 0;
 }
 
 .landing__button {

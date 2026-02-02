@@ -179,26 +179,26 @@ export default function Home() {
 
                             <article className="project-card">
                                 <div className="project-content">
-                                    <h3>Distributed Rate Limiter</h3>
+                                    <h3>2Auction</h3>
                                     <p className="project-desc">
-                                        High-performance API rate limiting service using token
-                                        bucket algorithm and Redis. Handles 10k+ req/s with sliding
-                                        window counters and graceful degradation.
+                                        Web application that brings live auction dynamics online,
+                                        enabling users to buy and sell items with a secure,
+                                        interactive experience for bidders and sellers.
                                     </p>
                                     <div className="project-tech">
-                                        <span className="tech-tag">Go</span>
-                                        <span className="tech-tag">Redis</span>
-                                        <span className="tech-tag">Docker</span>
-                                        <span className="tech-tag">gRPC</span>
+                                        <span className="tech-tag">PHP</span>
+                                        <span className="tech-tag">Laravel</span>
+                                        <span className="tech-tag">Blade</span>
+                                        <span className="tech-tag">PostgreSQL</span>
                                     </div>
                                 </div>
                                 <div className="project-meta">
                                     <span className="project-year">2024</span>
                                     <div className="project-links">
-                                        <a href="#" className="project-link">
-                                            Documentation
-                                        </a>
-                                        <a href="#" className="project-link">
+                                        <a
+                                            href="https://github.com/clarapbsousa/2Auction"
+                                            className="project-link"
+                                        >
                                             Source
                                         </a>
                                     </div>
@@ -207,25 +207,25 @@ export default function Home() {
 
                             <article className="project-card">
                                 <div className="project-content">
-                                    <h3>Terminal Garden</h3>
+                                    <h3>Study@</h3>
                                     <p className="project-desc">
-                                        Rust CLI tool that gamifies development consistency.
-                                        Local-first architecture with SQLite, cross-platform
-                                        support, and customizable growth algorithms.
+                                        Flutter app to help FEUP students find sustainable study
+                                        spots with maps, reviews, achievements, and personalized
+                                        profiles. Built as a team project for Software Engineering 2023/2024.
                                     </p>
                                     <div className="project-tech">
-                                        <span className="tech-tag">Rust</span>
+                                        <span className="tech-tag">Dart</span>
+                                        <span className="tech-tag">Flutter</span>
                                         <span className="tech-tag">SQLite</span>
-                                        <span className="tech-tag">CLI</span>
                                     </div>
                                 </div>
                                 <div className="project-meta">
-                                    <span className="project-year">2023</span>
+                                    <span className="project-year">2024</span>
                                     <div className="project-links">
-                                        <a href="#" className="project-link">
-                                            crates.io
-                                        </a>
-                                        <a href="#" className="project-link">
+                                        <a
+                                            href="https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T4"
+                                            className="project-link"
+                                        >
                                             Source
                                         </a>
                                     </div>

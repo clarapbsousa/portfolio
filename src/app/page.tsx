@@ -193,7 +193,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="project-meta">
-                                    <span className="project-year">2024</span>
+                                    <span className="project-year">2025</span>
                                     <div className="project-links">
                                         <a
                                             href="https://github.com/clarapbsousa/2Auction"

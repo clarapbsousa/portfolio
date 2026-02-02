@@ -85,8 +85,13 @@ export default function Home() {
                                         href="mailto:clarasousa@gmail.com"
                                         className="btn btn-primary"
                                     >Send Email</a>
-                                      <a href="#" className="btn">
-                                          My Resume
+                                      <a
+                                        href="/CV_ClaraSousa.pdf"
+                                        className="btn"
+                                        download="CV_ClaraSousa.pdf"
+                                        aria-label="Download Clara Sousa CV"
+                                      >
+                                        My Resume
                                       </a>
                                   </div>
                                 </div>

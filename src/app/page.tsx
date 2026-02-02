@@ -58,9 +58,9 @@ export default function Home() {
     return (
         <div className="portfolio-page">
             <Header
-                name="Elena Vasquez"
-                roleLineOne="Software Engineering Student"
-                roleLineTwo="Full Stack Developer"
+                name="Clara Sousa"
+                roleLineOne="Computer Engineering Student"
+                roleLineTwo="Software Engineer"
                 navItems={navItems}
                 activeSection={activeSection}
                 isMenuOpen={isMenuOpen}
@@ -75,26 +75,20 @@ export default function Home() {
                             <div>
                                 <h1>Building software with intention</h1>
                                 <p className="hero-subtitle">
-                                    Computer Science student specializing in distributed systems
-                                      and human-centered design. I write code that&apos;s maintainable,
-                                    accessible, and solves real problems.
+                                  Computer Engineering student @FEUP with experience building accessible, 
+                                  maintainable user interfaces, and a strong interest in data, machine learning, 
+                                  and AI to create smarter, user-centered products.
                                 </p>
-
                                 <div className="quick-info">
-                                    <div className="info-item">
-                                        <span className="info-label">Location</span>
-                                        <span className="info-value">Santiago, CL</span>
-                                    </div>
-                                    <div className="info-item">
-                                        <span className="info-label">Focus</span>
-                                        <span className="info-value">Full Stack</span>
-                                    </div>
-                                    <div className="info-item">
-                                        <span className="info-label">Status</span>
-                                        <span className="info-value status-available">
-                                            Available
-                                        </span>
-                                    </div>
+                                  <div className="contact-actions">
+                                    <a
+                                        href="mailto:clarasousa@gmail.com"
+                                        className="btn btn-primary"
+                                    >Send Email</a>
+                                      <a href="#" className="btn">
+                                          My Resume
+                                      </a>
+                                  </div>
                                 </div>
                             </div>
 
@@ -110,25 +104,25 @@ export default function Home() {
                                     &nbsp;&nbsp;constructor() {"{"}
                                     <br />
                                       &nbsp;&nbsp;&nbsp;&nbsp;this.name ={" "}
-                                      <span className="code-string">&quot;Elena&quot;</span>;<br />
+                                      <span className="code-string">&quot;Clara&quot;</span>;<br />
                                       &nbsp;&nbsp;&nbsp;&nbsp;this.stack = [{" "}
                                       <span className="code-string">&quot;TypeScript&quot;</span>,{" "}
-                                      <span className="code-string">&quot;Go&quot;</span>,{" "}
+                                      <span className="code-string">&quot;C++&quot;</span>,{" "}
                                       <span className="code-string">&quot;Python&quot;</span>];
                                     <br />
                                       &nbsp;&nbsp;&nbsp;&nbsp;this.interests = [{" "}
-                                      <span className="code-string">&quot;systems&quot;</span>,{" "}
-                                      <span className="code-string">&quot;ux&quot;</span>];
+                                      <span className="code-string">&quot;ux & ui&quot;</span>,{" "}
+                                      <span className="code-string">&quot;data&quot;</span>,{" "}
+                                      <span className="code-string">&quot;ai & ml&quot;</span>];
                                     <br />
                                     &nbsp;&nbsp;{"}"}
-                                    <br />
                                     <br />
                                     &nbsp;&nbsp;<span className="code-keyword">seeking</span>() {"{"}
                                     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                       <span className="code-keyword">return</span>{" "}
                                     <span className="code-string">
-                                        &quot;Summer 2025 Internship&quot;
+                                        &quot;Opportunities to grow&quot;
                                     </span>;
                                     <br />
                                     &nbsp;&nbsp;{"}"}
@@ -146,7 +140,7 @@ export default function Home() {
                             <h2 className="section-title">
                                 Selected Projects <span className="section-number">(03)</span>
                             </h2>
-                            <a href="#" className="section-link">
+                            <a href="https://github.com/claras" className="section-link">
                                 View All on GitHub →
                             </a>
                         </div>
@@ -418,32 +412,27 @@ export default function Home() {
                         <div className="contact">
                               <h2>Let&apos;s work together</h2>
                             <p className="contact-text">
-                                I&apos;m currently looking for Summer 2025 internships in backend,
-                                infrastructure, or full-stack roles. Interested in teams that
-                                value thoughtful engineering.
+                              Feel free to reach out at{" "}
+                              <a href="mailto:clara.barros.sousa@gmail.com" className="contact-link">
+                                clara.barros.sousa@gmail.com
+                              </a>
                             </p>
-
-                            <div className="contact-actions">
-                                <a
-                                    href="mailto:elena.vasquez@example.com"
-                                    className="btn btn-primary"
-                                >
-                                    Send Email →
-                                </a>
-                                <a href="#" className="btn">
-                                    Download Resume
-                                </a>
-                            </div>
-
+                            <p className="contact-text">
+                              Check out my GitHub and LinkedIn to see my work, or visit my 
+                              Goodreads and Letterboxd to see what movies and books I&apos;m enjoying.
+                            </p>
                             <div className="contact-links-row">
-                                <a href="#" className="contact-link">
-                                    github.com/elena
+                                <a href="https://github.com/clarapbsousa" className="contact-link">
+                                    GitHub
                                 </a>
-                                <a href="#" className="contact-link">
-                                    linkedin.com/in/elena
+                                <a href="https://linkedin.com/in/clarapbsousa" className="contact-link">
+                                    Linkedin
                                 </a>
-                                <a href="#" className="contact-link">
-                                    twitter.com/elena
+                                <a href="https://boxd.it/bItH7" className="contact-link">
+                                    Letterboxd
+                                </a>
+                                <a href="https://goodreads.com/clarapbsousa" className="contact-link">
+                                  Goodreads
                                 </a>
                             </div>
                         </div>
@@ -451,7 +440,7 @@ export default function Home() {
                 </section>
 
                 <footer className="site-footer">
-                    <p>© 2025 Elena Vasquez • Built with semantic HTML & CSS</p>
+                    <p>© 2026 Clara Sousa</p>
                 </footer>
             </main>
         </div>

@@ -40,6 +40,14 @@ export default function Header({
 			</div>
 
 			<aside className={`sidebar${isMenuOpen ? " open" : ""}`}>
+				<button
+					className="sidebar-close"
+					onClick={onToggleMenu}
+					aria-label="Close navigation"
+					type="button"
+				>
+					✕
+				</button>
 				<div className="sidebar-header">
 					<div className="sidebar-name">{name}</div>
 					<div className="sidebar-role">
@@ -70,15 +78,18 @@ export default function Header({
 
 				<div className="sidebar-footer">
 					<div className="social-links">
-						<a href="#" className="social-link" title="GitHub">
+						<a href="https://github.com/claras" className="social-link" title="GitHub">
 							Gh
 						</a>
-						<a href="#" className="social-link" title="LinkedIn">
+						<a href="https://www.linkedin.com/in/clarasousa" className="social-link" title="LinkedIn">
 							Li
 						</a>
-						<a href="#" className="social-link" title="Twitter">
-							Tw
+						<a href="https://boxd.it/bItH7" className="social-link" title="Letterboxd">
+							Lb
 						</a>
+            <a href="https://www.goodreads.com/clarapbsousa" className="social-link" title="Goodreads"> 
+            Gr
+            </a>
 					</div>
 					<div className="sidebar-email">clarasousa@gmail.com</div>
 				</div>

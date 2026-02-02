@@ -520,9 +520,10 @@ html {
 }
 
 .skill-level {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--sand);
   font-family: "Monaco", monospace;
+  padding-left: 1em;
 }
 
 /* Books & Movies Grid */

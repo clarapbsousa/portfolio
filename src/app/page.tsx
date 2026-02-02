@@ -239,69 +239,62 @@ export default function Home() {
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
-                                Technical Skills <span className="section-number">(03)</span>
+                                Skills Snapshot <span className="section-number">(03)</span>
                             </h2>
+                            <span className="section-note">What I use to build and learn</span>
                         </div>
 
                         <div className="skills-container">
                             <div className="skill-category">
-                                <h3>Frontend</h3>
+                                <h3>Core Stack</h3>
                                 <ul className="skill-list">
                                     <li>
-                                        TypeScript & React <span className="skill-level">Expert</span>
+                                        TypeScript & React <span className="skill-level">Strong</span>
                                     </li>
                                     <li>
-                                        Next.js & SSR <span className="skill-level">Advanced</span>
+                                        Next.js <span className="skill-level">Growing</span>
                                     </li>
                                     <li>
-                                        CSS Architecture
-                                        <span className="skill-level">Advanced</span>
+                                        CSS & UI Design <span className="skill-level">Strong</span>
                                     </li>
                                     <li>
-                                        Accessibility (a11y)
-                                        <span className="skill-level">Intermediate</span>
+                                        Accessibility (a11y) <span className="skill-level">Learning</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div className="skill-category">
-                                <h3>Backend</h3>
+                                <h3>Data & Backend</h3>
                                 <ul className="skill-list">
                                     <li>
-                                        Node.js & Python
-                                        <span className="skill-level">Advanced</span>
+                                        Python & C++ <span className="skill-level">Strong</span>
                                     </li>
                                     <li>
-                                        Go <span className="skill-level">Intermediate</span>
+                                        Node.js <span className="skill-level">Comfortable</span>
                                     </li>
                                     <li>
-                                        PostgreSQL & Redis
-                                        <span className="skill-level">Advanced</span>
+                                        SQL & Data Modeling <span className="skill-level">Growing</span>
                                     </li>
                                     <li>
-                                        System Design
-                                        <span className="skill-level">Intermediate</span>
+                                        APIs & Integration <span className="skill-level">Comfortable</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div className="skill-category">
-                                <h3>DevOps & Tools</h3>
+                                <h3>Workflow</h3>
                                 <ul className="skill-list">
                                     <li>
-                                        Docker & Kubernetes
-                                        <span className="skill-level">Intermediate</span>
+                                        Git & Collaboration <span className="skill-level">Strong</span>
                                     </li>
                                     <li>
-                                        AWS & GCP
-                                        <span className="skill-level">Intermediate</span>
+                                        Testing & QA <span className="skill-level">Learning</span>
                                     </li>
                                     <li>
-                                        CI/CD Pipelines
-                                        <span className="skill-level">Advanced</span>
+                                        Documentation <span className="skill-level">Strong</span>
                                     </li>
                                     <li>
-                                        Git & Testing <span className="skill-level">Expert</span>
+                                        CI/CD Basics <span className="skill-level">Learning</span>
                                     </li>
                                 </ul>
                             </div>

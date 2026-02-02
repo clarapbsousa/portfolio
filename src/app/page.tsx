@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
 import "./global.css";
 
 type SectionId = "about" | "projects" | "skills" | "media" | "contact";
@@ -56,62 +57,16 @@ export default function Home() {
 
     return (
         <div className="portfolio-page">
-            <div className="mobile-header">
-                <div className="mobile-header__name">Elena Vasquez</div>
-                <button
-                    className="mobile-menu-btn"
-                    onClick={() => setIsMenuOpen((prev) => !prev)}
-                    aria-label="Toggle navigation"
-                    aria-expanded={isMenuOpen}
-                >
-                    ☰
-                </button>
-            </div>
-
-            <aside className={`sidebar${isMenuOpen ? " open" : ""}`}>
-                <div className="sidebar-header">
-                    <div className="sidebar-name">Elena Vasquez</div>
-                    <div className="sidebar-role">
-                        Software Engineering Student
-                        <br />
-                        Full Stack Developer
-                    </div>
-                </div>
-
-                <nav>
-                    <ul className="nav-menu">
-                        {navItems.map((item) => (
-                            <li className="nav-item" key={item.id}>
-                                <a
-                                    href={`#${item.id}`}
-                                    className={`nav-link${
-                                        activeSection === item.id ? " active" : ""
-                                    }`}
-                                    onClick={() => handleNavClick(item.id)}
-                                >
-                                    <span className="nav-icon">{item.icon}</span>
-                                    {item.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-
-                <div className="sidebar-footer">
-                    <div className="social-links">
-                        <a href="#" className="social-link" title="GitHub">
-                            Gh
-                        </a>
-                        <a href="#" className="social-link" title="LinkedIn">
-                            Li
-                        </a>
-                        <a href="#" className="social-link" title="Twitter">
-                            Tw
-                        </a>
-                    </div>
-                    <div className="sidebar-email">elena.vasquez@example.com</div>
-                </div>
-            </aside>
+            <Header
+                name="Elena Vasquez"
+                roleLineOne="Software Engineering Student"
+                roleLineTwo="Full Stack Developer"
+                navItems={navItems}
+                activeSection={activeSection}
+                isMenuOpen={isMenuOpen}
+                onToggleMenu={() => setIsMenuOpen((prev) => !prev)}
+                onNavClick={handleNavClick}
+            />
 
             <main className="main-content">
                 <section id="about" className="hero">

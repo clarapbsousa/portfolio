@@ -82,7 +82,7 @@ export default function Home() {
                                 <div className="quick-info">
                                   <div className="contact-actions">
                                     <a
-                                        href="mailto:clarasousa@gmail.com"
+                                        href="mailto:clara.barros.sousa@gmail.com"
                                         className="btn btn-primary"
                                     >Send Email</a>
                                       <a
@@ -151,33 +151,30 @@ export default function Home() {
                         </div>
 
                         <div className="projects-grid">
-                            <article className="project-card">
-                                <div className="project-content">
-                                    <h3>Archivo Vivo</h3>
-                                    <p className="project-desc">
-                                        Digital archive platform for Chilean oral histories.
-                                        Features full-text search with Elasticsearch, collaborative
-                                        annotations, and optimized image delivery for low-bandwidth
-                                        regions.
-                                    </p>
-                                    <div className="project-tech">
-                                        <span className="tech-tag">React</span>
-                                        <span className="tech-tag">Node.js</span>
-                                        <span className="tech-tag">PostgreSQL</span>
-                                        <span className="tech-tag">Elasticsearch</span>
-                                    </div>
-                                </div>
-                                <div className="project-meta">
-                                    <span className="project-year">2024</span>
-                                    <div className="project-links">
-                                        <a href="#" className="project-link">
-                                            Live Demo
-                                        </a>
-                                        <a href="#" className="project-link">
-                                            Source
-                                        </a>
-                                    </div>
-                                </div>
+                          <article className="project-card">
+                            <div className="project-content">
+                              <h3>CherryPick</h3>
+                              <p className="project-desc">
+                                Cross-format cultural recommendation platform. Users input a
+                                book, movie, show, or album and receive curated picks across
+                                media types. Hackathon prototype with a full redesign in
+                                progress.
+                              </p>
+                              <div className="project-tech">
+                                <span className="tech-tag">TypeScript</span>
+                                <span className="tech-tag">React</span>
+                                <span className="tech-tag">Node.js</span>
+                                <span className="tech-tag">Appwrite</span>
+                              </div>
+                            </div>
+                            <div className="project-meta">
+                              <span className="project-year">2025</span>
+                              <div className="project-links">
+                                <a href="https://github.com/HenriqueSFernandes/CherryPick" className="project-link">
+                                  Source
+                                </a>
+                              </div>
+                            </div>
                             </article>
 
                             <article className="project-card">

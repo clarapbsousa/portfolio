@@ -91,7 +91,7 @@ export default function Header({
             Gr
             </a>
 					</div>
-					<div className="sidebar-email">clarasousa@gmail.com</div>
+					<div className="sidebar-email">clara.barros.sousa@gmail.com</div>
 				</div>
 			</aside>
 		</>

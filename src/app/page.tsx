@@ -10,8 +10,8 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
     { id: "skills", label: "Skills", icon: "03" },
-    { id: "media", label: "Books & Films", icon: "04" },
-    { id: "contact", label: "Contact", icon: "05" },
+    /* { id: "media", label: "Books & Films", icon: "04" }, */
+    { id: "contact", label: "Contact", icon: "04" },
 ];
 
 export default function Home() {
@@ -145,7 +145,7 @@ export default function Home() {
                             <h2 className="section-title">
                                 Selected Projects <span className="section-number">(03)</span>
                             </h2>
-                            <a href="https://github.com/claras" className="section-link">
+                            <a href="https://github.com/clarapbsousa" className="section-link">
                                 View All on GitHub →
                             </a>
                         </div>
@@ -302,7 +302,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="media" className="media-section">
+               {/* <section id="media" className="media-section">
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
@@ -400,7 +400,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section id="contact">
                     <div className="container">

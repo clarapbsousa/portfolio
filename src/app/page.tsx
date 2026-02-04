@@ -6,17 +6,28 @@ import "./global.css";
 
 type SectionId = "about" | "projects" | "skills" | "media" | "contact";
 
+type Book = {
+    title: string;
+    author: string;
+    book_id: string;
+    image_url: string;
+    rating: string;
+    description: string;
+    note?: string;
+};
+
 const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
     { id: "skills", label: "Skills", icon: "03" },
-    /* { id: "media", label: "Books & Films", icon: "04" }, */
-    { id: "contact", label: "Contact", icon: "04" },
+    { id: "media", label: "Books & Films", icon: "04" },
+    { id: "contact", label: "Contact", icon: "05" },
 ];
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState<SectionId>("about");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [books, setBooks] = useState<Book[]>([]);
 
     useEffect(() => {
         const sections = Array.from(
@@ -48,6 +59,14 @@ export default function Home() {
         sections.forEach((section) => observer.observe(section));
 
         return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        // Fetch books data
+        fetch("/books.json")
+            .then((res) => res.json())
+            .then((data) => setBooks(data))
+            .catch((err) => console.error("Error fetching books:", err));
     }, []);
 
     const handleNavClick = (id: SectionId) => {
@@ -302,7 +321,7 @@ export default function Home() {
                     </div>
                 </section>
 
-               {/* <section id="media" className="media-section">
+               <section id="media" className="media-section">
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
@@ -317,41 +336,28 @@ export default function Home() {
                                     <span className="media-icon">📚</span> Currently Reading
                                 </h3>
                                 <div className="book-list">
-                                    <div className="media-item">
-                                        <div className="media-thumb">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>Designing Data-Intensive Applications</h4>
-                                            <div className="media-creator">Martin Kleppmann</div>
-                                            <div className="media-note">
-                                                &quot;The bible for understanding trade-offs in distributed
-                                                systems&quot;
+                                    {books.length > 0 ? (
+                                        books.map((book) => (
+                                            <div key={book.book_id} className="media-item">
+                                                <div className="media-thumb">BOOK</div>
+                                                <div className="media-info">
+                                                    <h4>{book.title}</h4>
+                                                    <div className="media-creator">{book.author}</div>
+                                                    {book.note && (
+                                                        <div className="media-note">
+                                                            &quot;{book.note}&quot;
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className="media-item">
+                                            <div className="media-info">
+                                                <p>Loading books...</p>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="media-item">
-                                        <div className="media-thumb media-thumb--rust">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>The Soul of a New Machine</h4>
-                                            <div className="media-creator">Tracy Kidder</div>
-                                            <div className="media-note">
-                                                &quot;On the human drama of engineering teams under
-                                                pressure&quot;
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="media-item">
-                                        <div className="media-thumb">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>Thinking in Systems</h4>
-                                            <div className="media-creator">Donella Meadows</div>
-                                            <div className="media-note">
-                                                &quot;Essential for understanding feedback loops in software
-                                                architecture&quot;
-                                            </div>
-                                        </div>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
 
@@ -400,7 +406,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </section> */}
+                </section>
 
                 <section id="contact">
                     <div className="container">

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "book_id": "23463279",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415816873i/23463279.jpg",
+    "rating": "0",
+    "description": "Data is at the center of many challenges in system design today. Difficult issues need to be figured out, such as scalability, consistency, reliability, efficiency, and maintainability.",
+    "note": "The bible for understanding trade-offs in distributed systems"
+  },
+  {
+    "title": "The Soul of a New Machine",
+    "author": "Tracy Kidder",
+    "book_id": "7090",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442866104i/7090.jpg",
+    "rating": "0",
+    "description": "Tracy Kidder's riveting story of one company's efforts to bring a new microcomputer to market won both the Pulitzer Prize and the National Book Award.",
+    "note": "On the human drama of engineering teams under pressure"
+  },
+  {
+    "title": "Thinking in Systems",
+    "author": "Donella Meadows",
+    "book_id": "3828902",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1390169859i/3828902.jpg",
+    "rating": "0",
+    "description": "In the years following her role as the lead author of the international bestseller Limits to Growth, Donella Meadows remained a pioneer of environmental and social analysis.",
+    "note": "Essential for understanding feedback loops in software architecture"
+  }
+]

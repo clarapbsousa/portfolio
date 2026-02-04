@@ -28,6 +28,8 @@ export default function Home() {
     const [activeSection, setActiveSection] = useState<SectionId>("about");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [books, setBooks] = useState<Book[]>([]);
+    const [booksLoading, setBooksLoading] = useState(true);
+    const [booksError, setBooksError] = useState(false);
 
     useEffect(() => {
         const sections = Array.from(
@@ -65,8 +67,15 @@ export default function Home() {
         // Fetch books data
         fetch("/books.json")
             .then((res) => res.json())
-            .then((data) => setBooks(data))
-            .catch((err) => console.error("Error fetching books:", err));
+            .then((data) => {
+                setBooks(data);
+                setBooksLoading(false);
+            })
+            .catch((err) => {
+                console.error("Failed to load books data from /books.json:", err);
+                setBooksError(true);
+                setBooksLoading(false);
+            });
     }, []);
 
     const handleNavClick = (id: SectionId) => {
@@ -336,7 +345,19 @@ export default function Home() {
                                     <span className="media-icon">📚</span> Currently Reading
                                 </h3>
                                 <div className="book-list">
-                                    {books.length > 0 ? (
+                                    {booksLoading ? (
+                                        <div className="media-item">
+                                            <div className="media-info">
+                                                <p>Loading books...</p>
+                                            </div>
+                                        </div>
+                                    ) : booksError ? (
+                                        <div className="media-item">
+                                            <div className="media-info">
+                                                <p>Failed to load books</p>
+                                            </div>
+                                        </div>
+                                    ) : books.length > 0 ? (
                                         books.map((book) => (
                                             <div key={book.book_id} className="media-item">
                                                 <div className="media-thumb">BOOK</div>
@@ -354,7 +375,7 @@ export default function Home() {
                                     ) : (
                                         <div className="media-item">
                                             <div className="media-info">
-                                                <p>Loading books...</p>
+                                                <p>No books found</p>
                                             </div>
                                         </div>
                                     )}

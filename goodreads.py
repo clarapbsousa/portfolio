@@ -10,6 +10,9 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from urllib.parse import quote
 
+# Maximum length for book descriptions before truncation
+MAX_DESCRIPTION_LENGTH = 200
+
 
 def fetch_goodreads_books(user_id, shelf="currently-reading"):
     """
@@ -57,7 +60,7 @@ def fetch_goodreads_books(user_id, shelf="currently-reading"):
                 # Description is often in CDATA, extract plain text
                 desc_text = description_elem.text
                 # Simple extraction - could be enhanced with HTML parsing
-                description = desc_text[:200] + "..." if len(desc_text) > 200 else desc_text
+                description = desc_text[:MAX_DESCRIPTION_LENGTH] + "..." if len(desc_text) > MAX_DESCRIPTION_LENGTH else desc_text
             
             book = {
                 "title": title,

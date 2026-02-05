@@ -569,7 +569,7 @@ html {
 .movie-list {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2.2rem;
 }
 
 .book-divider,
@@ -597,6 +597,10 @@ html {
   cursor: default;
 }
 
+.media-item--movie {
+  padding: 0.9rem;
+}
+
 .media-item:hover {
   transform: translateX(5px);
   border-color: var(--rust);
@@ -618,6 +622,12 @@ html {
   line-height: 1.2;
 }
 
+.media-thumb--movie {
+  width: 40px;
+  height: 56px;
+  font-size: 0.55rem;
+}
+
 img.media-thumb {
   display: block;
 }
@@ -637,6 +647,19 @@ img.media-thumb {
   font-family: "Source Serif 4", serif;
   font-size: 1rem;
   margin-bottom: 0.25rem;
+}
+
+.media-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.media-rating {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .media-creator {

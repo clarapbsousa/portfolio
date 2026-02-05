@@ -398,7 +398,7 @@ export default function Home() {
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
-                                Influences <span className="section-number">(04)</span>
+                                Books & Movies <span className="section-number">(04)</span>
                             </h2>
                             <span className="section-note">What shapes my thinking</span>
                         </div>
@@ -561,34 +561,36 @@ export default function Home() {
                                         )}
 
                                     {letterboxdStatus === "idle" &&
-                                        letterboxdFilms.slice(0, 3).map((film, index) => (
+                                        letterboxdFilms.slice(0, 4).map((film, index) => (
                                             <div
-                                                className="media-item"
+                                                className="media-item media-item--movie"
                                                 key={`${film.title}-${index}-film`}
                                             >
                                                 {film.posterUrl ? (
                                                     <Image
-                                                        className="media-thumb media-thumb--image"
+                                                        className="media-thumb media-thumb--image media-thumb--movie"
                                                         src={film.posterUrl}
                                                         alt={`${film.title} poster`}
-                                                        width={50}
-                                                        height={70}
+                                                        width={40}
+                                                        height={56}
                                                     />
                                                     
                                                 ) : (
                                                     
-                                                    <div className="media-thumb">FILM</div>
+                                                    <div className="media-thumb media-thumb--movie">FILM</div>
                                                 )}
                                                 <div className="media-info">
-                                                    <h4>{film.title}</h4>
+                                                    <div className="media-title-row">
+                                                        <h4>{film.title}</h4>
+                                                        {film.rating && (
+                                                            <span className="media-rating">
+                                                                {film.rating}
+                                                            </span>
+                                                        )}
+                                                    </div>
                                                     <div className="media-creator">
                                                         {film.director ?? "Director"}
                                                     </div>
-                                                    {film.rating && (
-                                                        <div className="media-note">
-                                                            {film.rating}
-                                                        </div>
-                                                    )}
                                                 </div>
                                             </div>
                                         ))}

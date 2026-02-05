@@ -29,6 +29,9 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "contact", label: "Contact", icon: "05" },
 ];
 
+const emailAddress = "clara.barros.sousa@gmail.com";
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+
 export default function Home() {
     const [activeSection, setActiveSection] = useState<SectionId>("about");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -176,8 +179,10 @@ export default function Home() {
                                 <div className="quick-info">
                                   <div className="contact-actions">
                                     <a
-                                        href="mailto:clara.barros.sousa@gmail.com"
+                                        href={gmailComposeUrl}
                                         className="btn btn-primary"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >Send Email</a>
                                       <a
                                         href="/CV_ClaraSousa.pdf"
@@ -610,7 +615,7 @@ export default function Home() {
                             <p className="contact-text">
                               Feel free to reach out at{" "}
                               <a href="mailto:clara.barros.sousa@gmail.com" className="contact-link">
-                                clara.barros.sousa@gmail.com
+                                                                {emailAddress}
                               </a>
                             </p>
                             <p className="contact-text">

@@ -7,20 +7,14 @@ export const runtime = "nodejs";
 
 const execFileAsync = promisify(execFile);
 
-let cachedPayload: unknown = null;
-let cachedAt = 0;
-const cacheTtlMs = 5 * 60 * 1000;
-
 export async function GET() {
-    if (cachedPayload && Date.now() - cachedAt < cacheTtlMs) {
-        return NextResponse.json(cachedPayload, { status: 200 });
-    }
     const scriptPath = path.join(
         process.cwd(),
         "src",
+        "app",
         "api",
-        "letterboxd",
-        "letterboxd.py"
+        "goodreads",
+        "goodreads.py"
     );
     const pythonExecutable = process.env.PYTHON_EXECUTABLE ?? "python3";
 
@@ -36,8 +30,6 @@ export async function GET() {
             return NextResponse.json(payload, { status: 500 });
         }
 
-        cachedPayload = payload;
-        cachedAt = Date.now();
         return NextResponse.json(payload, { status: 200 });
     } catch (error) {
         const details =
@@ -49,7 +41,7 @@ export async function GET() {
 
         return NextResponse.json(
             {
-                error: "Failed to fetch Letterboxd data.",
+                error: "Failed to fetch Goodreads data.",
                 details: process.env.NODE_ENV === "production" ? undefined : details,
             },
             { status: 500 }

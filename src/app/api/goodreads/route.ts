@@ -11,7 +11,6 @@ export async function GET() {
     const scriptPath = path.join(
         process.cwd(),
         "src",
-        "app",
         "api",
         "goodreads",
         "goodreads.py"

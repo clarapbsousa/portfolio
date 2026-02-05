@@ -144,6 +144,9 @@ export default function Home() {
 
     const handleNavClick = (id: SectionId) => {
         setActiveSection(id);
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+            setIsMenuOpen(false);
+        }
     };
 
     return (

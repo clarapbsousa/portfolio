@@ -526,7 +526,7 @@ html {
   padding-left: 1em;
 }
 
-/* Books Grid */
+/* Books & Movies Grid */
 .media-section {
   background: var(--surface);
   margin: 0 -3rem;
@@ -560,14 +560,20 @@ html {
   font-size: 1rem;
 }
 
-.book-list,
 .book-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.book-divider {
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.book-divider,
+.movie-divider {
   height: 1px;
   background: var(--border);
   margin: 2rem 0;

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "goodreads": "set -a && source .env && set +a && python src/app/api/goodreads/goodreads.py"
+    "goodreads": "set -a && source .env && set +a && python src/app/api/goodreads/goodreads.py ",
+    "letterboxd": "set -a && source .env && set +a && python src/app/api/letterboxd/letterboxd.py "
   },
   "dependencies": {
     "next": "16.1.6",

@@ -13,6 +13,13 @@ type GoodreadsBook = {
     coverUrl?: string | null;
 };
 
+type LetterboxdFilm = {
+    title: string;
+    link?: string | null;
+    posterUrl?: string | null;
+    rating?: string | null;
+};
+
 const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
@@ -27,6 +34,10 @@ export default function Home() {
     const [goodreadsBooks, setGoodreadsBooks] = useState<GoodreadsBook[]>([]);
     const [recentlyReadBooks, setRecentlyReadBooks] = useState<GoodreadsBook[]>([]);
     const [goodreadsStatus, setGoodreadsStatus] = useState<
+        "idle" | "loading" | "error"
+    >("loading");
+    const [letterboxdFilms, setLetterboxdFilms] = useState<LetterboxdFilm[]>([]);
+    const [letterboxdStatus, setLetterboxdStatus] = useState<
         "idle" | "loading" | "error"
     >("loading");
 
@@ -95,6 +106,37 @@ export default function Home() {
         };
 
         loadGoodreads();
+
+        return () => controller.abort();
+    }, []);
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        const loadLetterboxd = async () => {
+            try {
+                setLetterboxdStatus("loading");
+                const response = await fetch("/api/letterboxd", {
+                    signal: controller.signal,
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch Letterboxd data");
+                }
+
+                const data = await response.json();
+                const films = Array.isArray(data?.films) ? data.films : [];
+
+                setLetterboxdFilms(films);
+                setLetterboxdStatus("idle");
+            } catch {
+                if (!controller.signal.aborted) {
+                    setLetterboxdStatus("error");
+                }
+            }
+        };
+
+        loadLetterboxd();
 
         return () => controller.abort();
     }, []);
@@ -468,6 +510,78 @@ export default function Home() {
                                                     <h4>{book.title}</h4>
                                                     <div className="media-creator">
                                                         {book.author ?? "Goodreads"}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+
+                            <div className="media-category">
+                                <h3>
+                                    <span className="media-icon">🎬</span> Recently Watched
+                                </h3>
+                                <div className="movie-list">
+                                    {letterboxdStatus === "loading" && (
+                                        <div className="media-item">
+                                            <div className="media-thumb">FILM</div>
+                                            <div className="media-info">
+                                                <h4>Loading Letterboxd...</h4>
+                                                <div className="media-creator">
+                                                    Fetching your latest logs
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {letterboxdStatus === "error" && (
+                                        <div className="media-item">
+                                            <div className="media-thumb">FILM</div>
+                                            <div className="media-info">
+                                                <h4>Letterboxd unavailable</h4>
+                                                <div className="media-creator">
+                                                    Check your RSS URL or try again later
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {letterboxdStatus === "idle" &&
+                                        letterboxdFilms.length === 0 && (
+                                            <div className="media-item">
+                                                <div className="media-thumb">FILM</div>
+                                                <div className="media-info">
+                                                    <h4>No films found</h4>
+                                                    <div className="media-creator">
+                                                        Update your Letterboxd diary
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                    {letterboxdStatus === "idle" &&
+                                        letterboxdFilms.slice(0, 3).map((film, index) => (
+                                            <div
+                                                className="media-item"
+                                                key={`${film.title}-${index}-film`}
+                                            >
+                                                {film.posterUrl ? (
+                                                    <Image
+                                                        className="media-thumb media-thumb--image"
+                                                        src={film.posterUrl}
+                                                        alt={`${film.title} poster`}
+                                                        width={50}
+                                                        height={70}
+                                                    />
+                                                    
+                                                ) : (
+                                                    
+                                                    <div className="media-thumb">FILM</div>
+                                                )}
+                                                <div className="media-info">
+                                                    <h4>{film.title}</h4>
+                                                    <div className="media-creator">
+                                                        {film.rating ?? "Letterboxd"}
                                                     </div>
                                                 </div>
                                             </div>

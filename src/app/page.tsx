@@ -17,14 +17,15 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
     { id: "skills", label: "Skills", icon: "03" },
-    /* { id: "media", label: "Books & Films", icon: "04" }, */
-    { id: "contact", label: "Contact", icon: "04" },
+    { id: "media", label: "Books & Films", icon: "04" },
+    { id: "contact", label: "Contact", icon: "05" },
 ];
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState<SectionId>("about");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [goodreadsBooks, setGoodreadsBooks] = useState<GoodreadsBook[]>([]);
+    const [recentlyReadBooks, setRecentlyReadBooks] = useState<GoodreadsBook[]>([]);
     const [goodreadsStatus, setGoodreadsStatus] = useState<
         "idle" | "loading" | "error"
     >("loading");
@@ -76,9 +77,15 @@ export default function Home() {
                 }
 
                 const data = await response.json();
-                const books = Array.isArray(data?.books) ? data.books : [];
+                const currentlyReading = Array.isArray(data?.currentlyReading)
+                    ? data.currentlyReading
+                    : [];
+                const recentlyRead = Array.isArray(data?.recentlyRead)
+                    ? data.recentlyRead
+                    : [];
 
-                setGoodreadsBooks(books);
+                setGoodreadsBooks(currentlyReading);
+                setRecentlyReadBooks(recentlyRead);
                 setGoodreadsStatus("idle");
             } catch {
                 if (!controller.signal.aborted) {
@@ -401,6 +408,50 @@ export default function Home() {
                                             <div
                                                 className="media-item"
                                                 key={`${book.title}-${index}`}
+                                            >
+                                                {book.coverUrl ? (
+                                                    <Image
+                                                        className="media-thumb media-thumb--image"
+                                                        src={book.coverUrl}
+                                                        alt={`${book.title} cover`}
+                                                        width={50}
+                                                        height={70}
+                                                    />
+                                                ) : (
+                                                    <div className="media-thumb">BOOK</div>
+                                                )}
+                                                <div className="media-info">
+                                                    <h4>{book.title}</h4>
+                                                    <div className="media-creator">
+                                                        {book.author ?? "Goodreads"}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div>
+
+                                <div className="book-divider" />
+
+                                <h4 className="media-subtitle">Recently Read</h4>
+                                <div className="book-list">
+                                    {goodreadsStatus === "idle" &&
+                                        recentlyReadBooks.length === 0 && (
+                                            <div className="media-item">
+                                                <div className="media-thumb">BOOK</div>
+                                                <div className="media-info">
+                                                    <h4>No recent reads yet</h4>
+                                                    <div className="media-creator">
+                                                        Update your Goodreads read shelf
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                    {goodreadsStatus === "idle" &&
+                                        recentlyReadBooks.slice(0, 2).map((book, index) => (
+                                            <div
+                                                className="media-item"
+                                                key={`${book.title}-${index}-recent`}
                                             >
                                                 {book.coverUrl ? (
                                                     <Image

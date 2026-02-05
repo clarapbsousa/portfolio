@@ -1,10 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Header from "./components/Header";
 import "./global.css";
 
 type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+
+type GoodreadsBook = {
+    title: string;
+    author?: string | null;
+    coverUrl?: string | null;
+};
 
 const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
@@ -17,6 +24,10 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
 export default function Home() {
     const [activeSection, setActiveSection] = useState<SectionId>("about");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [goodreadsBooks, setGoodreadsBooks] = useState<GoodreadsBook[]>([]);
+    const [goodreadsStatus, setGoodreadsStatus] = useState<
+        "idle" | "loading" | "error"
+    >("loading");
 
     useEffect(() => {
         const sections = Array.from(
@@ -48,6 +59,37 @@ export default function Home() {
         sections.forEach((section) => observer.observe(section));
 
         return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        const loadGoodreads = async () => {
+            try {
+                setGoodreadsStatus("loading");
+                const response = await fetch("/api/goodreads", {
+                    signal: controller.signal,
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch Goodreads data");
+                }
+
+                const data = await response.json();
+                const books = Array.isArray(data?.books) ? data.books : [];
+
+                setGoodreadsBooks(books);
+                setGoodreadsStatus("idle");
+            } catch {
+                if (!controller.signal.aborted) {
+                    setGoodreadsStatus("error");
+                }
+            }
+        };
+
+        loadGoodreads();
+
+        return () => controller.abort();
     }, []);
 
     const handleNavClick = (id: SectionId) => {
@@ -302,7 +344,7 @@ export default function Home() {
                     </div>
                 </section>
 
-               {/* <section id="media" className="media-section">
+               <section id="media" className="media-section">
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
@@ -317,45 +359,72 @@ export default function Home() {
                                     <span className="media-icon">📚</span> Currently Reading
                                 </h3>
                                 <div className="book-list">
-                                    <div className="media-item">
-                                        <div className="media-thumb">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>Designing Data-Intensive Applications</h4>
-                                            <div className="media-creator">Martin Kleppmann</div>
-                                            <div className="media-note">
-                                                &quot;The bible for understanding trade-offs in distributed
-                                                systems&quot;
+                                    {goodreadsStatus === "loading" && (
+                                        <div className="media-item">
+                                            <div className="media-thumb">BOOK</div>
+                                            <div className="media-info">
+                                                <h4>Loading Goodreads...</h4>
+                                                <div className="media-creator">
+                                                    Fetching your latest reads
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    )}
 
-                                    <div className="media-item">
-                                        <div className="media-thumb media-thumb--rust">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>The Soul of a New Machine</h4>
-                                            <div className="media-creator">Tracy Kidder</div>
-                                            <div className="media-note">
-                                                &quot;On the human drama of engineering teams under
-                                                pressure&quot;
+                                    {goodreadsStatus === "error" && (
+                                        <div className="media-item">
+                                            <div className="media-thumb">BOOK</div>
+                                            <div className="media-info">
+                                                <h4>Goodreads unavailable</h4>
+                                                <div className="media-creator">
+                                                    Check your credentials or try again later
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    )}
 
-                                    <div className="media-item">
-                                        <div className="media-thumb">BOOK</div>
-                                        <div className="media-info">
-                                            <h4>Thinking in Systems</h4>
-                                            <div className="media-creator">Donella Meadows</div>
-                                            <div className="media-note">
-                                                &quot;Essential for understanding feedback loops in software
-                                                architecture&quot;
+                                    {goodreadsStatus === "idle" &&
+                                        goodreadsBooks.length === 0 && (
+                                            <div className="media-item">
+                                                <div className="media-thumb">BOOK</div>
+                                                <div className="media-info">
+                                                    <h4>No books found</h4>
+                                                    <div className="media-creator">
+                                                        Update your Goodreads shelf
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        )}
+
+                                    {goodreadsStatus === "idle" &&
+                                        goodreadsBooks.slice(0, 3).map((book, index) => (
+                                            <div
+                                                className="media-item"
+                                                key={`${book.title}-${index}`}
+                                            >
+                                                {book.coverUrl ? (
+                                                    <Image
+                                                        className="media-thumb media-thumb--image"
+                                                        src={book.coverUrl}
+                                                        alt={`${book.title} cover`}
+                                                        width={50}
+                                                        height={70}
+                                                    />
+                                                ) : (
+                                                    <div className="media-thumb">BOOK</div>
+                                                )}
+                                                <div className="media-info">
+                                                    <h4>{book.title}</h4>
+                                                    <div className="media-creator">
+                                                        {book.author ?? "Goodreads"}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                 </div>
                             </div>
 
-                            <div className="media-category">
+                            {/* <div className="media-category">
                                 <h3>
                                     <span className="media-icon media-icon--forest">🎬</span>
                                     Films That Matter
@@ -397,10 +466,10 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                     </div>
-                </section> */}
+                </section> 
 
                 <section id="contact">
                     <div className="container">

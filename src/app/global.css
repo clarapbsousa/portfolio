@@ -604,6 +604,16 @@ html {
   line-height: 1.2;
 }
 
+img.media-thumb {
+  display: block;
+}
+
+.media-thumb--image {
+  background: transparent;
+  color: transparent;
+  object-fit: cover;
+}
+
 .media-thumb--rust {
   background: linear-gradient(135deg, #b85c38 0%, #964a2d 100%);
 }

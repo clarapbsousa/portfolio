@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "goodreads": "set -a && source .env && set +a && python src/app/api/goodreads/goodreads.py"
   },
   "dependencies": {
     "next": "16.1.6",

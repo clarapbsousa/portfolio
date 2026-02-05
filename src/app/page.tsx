@@ -144,7 +144,6 @@ export default function Home() {
 
     const handleNavClick = (id: SectionId) => {
         setActiveSection(id);
-        setIsMenuOpen(false);
     };
 
     return (

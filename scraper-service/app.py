@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 import sys
 from pathlib import Path
+import time
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
@@ -13,6 +14,13 @@ from goodreads import fetch_goodreads_data
 from letterboxd import fetch_letterboxd_data
 
 app = FastAPI()
+
+cache = {
+    "goodreads": {"timestamp": 0.0, "data": None},
+    "letterboxd": {"timestamp": 0.0, "data": None},
+}
+goodreads_ttl = int(os.getenv("GOODREADS_CACHE_TTL", "600"))
+letterboxd_ttl = int(os.getenv("LETTERBOXD_CACHE_TTL", "600"))
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,10 +39,17 @@ def health():
 @app.get("/goodreads")
 def goodreads():
     try:
-        return {
+        now = time.time()
+        cached = cache["goodreads"]
+        if cached["data"] and now - cached["timestamp"] < goodreads_ttl:
+            return cached["data"]
+
+        data = {
             "currentlyReading": fetch_goodreads_data("currently-reading"),
             "recentlyRead": fetch_goodreads_data("read"),
         }
+        cache["goodreads"] = {"timestamp": now, "data": data}
+        return data
     except Exception as error:
         raise HTTPException(status_code=500, detail=str(error))
 
@@ -42,6 +57,13 @@ def goodreads():
 @app.get("/letterboxd")
 def letterboxd():
     try:
-        return {"films": fetch_letterboxd_data()}
+        now = time.time()
+        cached = cache["letterboxd"]
+        if cached["data"] and now - cached["timestamp"] < letterboxd_ttl:
+            return cached["data"]
+
+        data = {"films": fetch_letterboxd_data()}
+        cache["letterboxd"] = {"timestamp": now, "data": data}
+        return data
     except Exception as error:
         raise HTTPException(status_code=500, detail=str(error))

@@ -15,6 +15,7 @@ type GoodreadsBook = {
 
 type LetterboxdFilm = {
     title: string;
+    director?: string | null;
     link?: string | null;
     posterUrl?: string | null;
     rating?: string | null;
@@ -581,8 +582,13 @@ export default function Home() {
                                                 <div className="media-info">
                                                     <h4>{film.title}</h4>
                                                     <div className="media-creator">
-                                                        {film.rating ?? "Letterboxd"}
+                                                        {film.director ?? "Director"}
                                                     </div>
+                                                    {film.rating && (
+                                                        <div className="media-note">
+                                                            {film.rating}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         ))}

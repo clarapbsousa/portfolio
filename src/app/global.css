@@ -526,7 +526,7 @@ html {
   padding-left: 1em;
 }
 
-/* Books & Movies Grid */
+/* Books Grid */
 .media-section {
   background: var(--surface);
   margin: 0 -3rem;
@@ -560,13 +560,8 @@ html {
   font-size: 1rem;
 }
 
-.media-icon--forest {
-  background: var(--forest);
-  color: white;
-}
-
 .book-list,
-.movie-list {
+.book-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -631,12 +626,6 @@ img.media-thumb {
   background: linear-gradient(135deg, #b85c38 0%, #964a2d 100%);
 }
 
-.movie-thumb {
-  background: linear-gradient(135deg, #4a5d4e 0%, #3a4a3e 100%);
-  color: rgba(255, 255, 255, 0.5);
-  width: 50px;
-  height: 70px;
-}
 
 .media-info h4 {
   font-family: "Source Serif 4", serif;

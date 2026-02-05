@@ -475,49 +475,6 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            {/* <div className="media-category">
-                                <h3>
-                                    <span className="media-icon media-icon--forest">🎬</span>
-                                    Films That Matter
-                                </h3>
-                                <div className="movie-list">
-                                    <div className="media-item">
-                                        <div className="media-thumb movie-thumb">FILM</div>
-                                        <div className="media-info">
-                                            <h4>Solaris (1972)</h4>
-                                            <div className="media-creator">Andrei Tarkovsky</div>
-                                            <div className="media-note">
-                                                &quot;Explores the limits of human understanding when
-                                                building systems beyond our comprehension&quot;
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="media-item">
-                                        <div className="media-thumb movie-thumb">FILM</div>
-                                        <div className="media-info">
-                                            <h4>Primer</h4>
-                                            <div className="media-creator">Shane Carruth</div>
-                                            <div className="media-note">
-                                                &quot;The ultimate film about debugging—complex, recursive,
-                                                and intellectually honest&quot;
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="media-item">
-                                        <div className="media-thumb movie-thumb">FILM</div>
-                                        <div className="media-info">
-                                            <h4>The Social Network</h4>
-                                            <div className="media-creator">David Fincher</div>
-                                            <div className="media-note">
-                                                &quot;A cautionary tale about technical debt in relationships
-                                                and code&quot;
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*/}
                         </div>
                     </div>
                 </section> 

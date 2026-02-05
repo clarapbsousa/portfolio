@@ -1,52 +1,28 @@
 import { NextResponse } from "next/server";
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
-import path from "node:path";
-
-export const runtime = "nodejs";
-
-const execFileAsync = promisify(execFile);
-
-let cachedPayload: unknown = null;
-let cachedAt = 0;
-const cacheTtlMs = 5 * 60 * 1000;
+export const runtime = "edge";
 
 export async function GET() {
-    if (cachedPayload && Date.now() - cachedAt < cacheTtlMs) {
-        return NextResponse.json(cachedPayload, { status: 200 });
+    const baseUrl = process.env.SCRAPER_SERVICE_URL;
+    if (!baseUrl) {
+        return NextResponse.json(
+            { error: "Missing SCRAPER_SERVICE_URL." },
+            { status: 500 }
+        );
     }
-    const scriptPath = path.join(
-        process.cwd(),
-        "src",
-        "api",
-        "letterboxd",
-        "letterboxd.py"
-    );
-    const pythonExecutable = process.env.PYTHON_EXECUTABLE ?? "python3";
 
     try {
-        const { stdout } = await execFileAsync(pythonExecutable, [scriptPath], {
-            env: process.env,
-            timeout: 20000,
-            maxBuffer: 1024 * 1024,
+        const response = await fetch(`${baseUrl}/letterboxd`, {
+            cache: "no-store",
         });
-        const payload = JSON.parse(stdout);
+        const payload = await response.json();
 
-        if (payload?.error) {
+        if (!response.ok || payload?.error) {
             return NextResponse.json(payload, { status: 500 });
         }
 
-        cachedPayload = payload;
-        cachedAt = Date.now();
         return NextResponse.json(payload, { status: 200 });
     } catch (error) {
-        const details =
-            error && typeof error === "object" && "stderr" in error
-                ? String(error.stderr)
-                : error instanceof Error
-                  ? error.message
-                  : "Unknown error";
-
+        const details = error instanceof Error ? error.message : "Unknown error";
         return NextResponse.json(
             {
                 error: "Failed to fetch Letterboxd data.",

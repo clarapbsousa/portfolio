@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor
 import feedparser
 import requests
 from bs4 import BeautifulSoup
@@ -12,7 +13,8 @@ def fetch_letterboxd_data():
 	if not rss_url:
 		raise ValueError("Missing LETTERBOXD_RSS_URL environment variable.")
 
-	response = requests.get(
+	session = requests.Session()
+	response = session.get(
 		rss_url,
 		headers={
 			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -28,15 +30,18 @@ def fetch_letterboxd_data():
 		raise ValueError("Failed to parse Letterboxd RSS feed.")
 
 	films = []
-	for entry in feed.entries:
+	film_urls = []
+	max_entries = 4
+	for entry in feed.entries[:max_entries]:
 		title = entry.get("title", "Untitled")
 		rating = None
 		title_parts = title.split(" - ")
 		if len(title_parts) > 1:
 			title = " - ".join(title_parts[:-1]).strip()
-			rating_match = re.search(r"([★½]+)$", title_parts[-1].strip())
+			last_part = title_parts[-1]
+			rating_match = re.search(r"[★½]+", last_part)
 			if rating_match:
-				rating = rating_match.group(1)
+				rating = rating_match.group(0)
 
 		title = re.sub(r",\s*\d{4}$", "", title).strip()
 		link = entry.get("link")
@@ -54,23 +59,7 @@ def fetch_letterboxd_data():
 			match = re.match(r"^https?://letterboxd\.com/[^/]+/film/([^/]+)/", link)
 			if match:
 				film_url = f"https://letterboxd.com/film/{match.group(1)}/"
-
-		if film_url:
-			try:
-				film_page = requests.get(
-					film_url,
-					headers={
-						"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-					},
-					timeout=20,
-				)
-				film_soup = BeautifulSoup(film_page.text, "html.parser")
-				label = film_soup.find("meta", {"name": "twitter:label1"})
-				data = film_soup.find("meta", {"name": "twitter:data1"})
-				if label and data and label.get("content") == "Directed by":
-					director = data.get("content")
-			except Exception:
-				director = None
+		film_urls.append(film_url)
 
 		films.append(
 			{
@@ -81,6 +70,32 @@ def fetch_letterboxd_data():
 				"rating": rating,
 			}
 		)
+
+	def fetch_director(url):
+		if not url:
+			return None
+		try:
+			film_page = session.get(
+				url,
+				headers={
+					"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+				},
+				timeout=20,
+			)
+			film_soup = BeautifulSoup(film_page.text, "html.parser")
+			label = film_soup.find("meta", {"name": "twitter:label1"})
+			data = film_soup.find("meta", {"name": "twitter:data1"})
+			if label and data and label.get("content") == "Directed by":
+				return data.get("content")
+		except Exception:
+			return None
+		return None
+
+	max_directors = 3
+	with ThreadPoolExecutor(max_workers=3) as executor:
+		director_results = list(executor.map(fetch_director, film_urls[:max_directors]))
+	for index, director in enumerate(director_results):
+		films[index]["director"] = director
 
 	return films
 

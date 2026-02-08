@@ -1,8 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 import os
 import sys
 from pathlib import Path
+import threading
 import time
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -16,11 +19,72 @@ from letterboxd import fetch_letterboxd_data
 app = FastAPI()
 
 cache = {
-    "goodreads": {"timestamp": 0.0, "data": None},
-    "letterboxd": {"timestamp": 0.0, "data": None},
+    "goodreads": {"timestamp": None, "data": None},
+    "letterboxd": {"timestamp": None, "data": None},
 }
-goodreads_ttl = int(os.getenv("GOODREADS_CACHE_TTL", "600"))
-letterboxd_ttl = int(os.getenv("LETTERBOXD_CACHE_TTL", "600"))
+
+
+cache_timezone = os.getenv("CACHE_TIMEZONE", "UTC")
+
+
+def get_timezone():
+    try:
+        return ZoneInfo(cache_timezone)
+    except Exception:
+        return ZoneInfo("UTC")
+
+
+def current_cache_date():
+    return datetime.now(get_timezone()).strftime("%Y-%m-%d")
+
+
+def refresh_goodreads():
+    today = current_cache_date()
+    data = {
+        "currentlyReading": fetch_goodreads_data("currently-reading"),
+        "recentlyRead": fetch_goodreads_data("read"),
+    }
+    cache["goodreads"] = {"timestamp": today, "data": data}
+    return data
+
+
+def refresh_letterboxd():
+    today = current_cache_date()
+    data = {"films": fetch_letterboxd_data()}
+    cache["letterboxd"] = {"timestamp": today, "data": data}
+    return data
+
+
+def refresh_all():
+    try:
+        refresh_goodreads()
+    except Exception:
+        pass
+    try:
+        refresh_letterboxd()
+    except Exception:
+        pass
+
+
+def seconds_until_next_midnight():
+    now = datetime.now(get_timezone())
+    next_midnight = (now + timedelta(days=1)).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
+    return max(0, int((next_midnight - now).total_seconds()))
+
+
+def scheduler_loop():
+    refresh_all()
+    while True:
+        time.sleep(seconds_until_next_midnight())
+        refresh_all()
+
+
+@app.on_event("startup")
+def start_scheduler():
+    thread = threading.Thread(target=scheduler_loop, daemon=True)
+    thread.start()
 
 app.add_middleware(
     CORSMiddleware,
@@ -39,31 +103,30 @@ def health():
 @app.get("/goodreads")
 def goodreads():
     try:
-        now = time.time()
         cached = cache["goodreads"]
-        if cached["data"] and now - cached["timestamp"] < goodreads_ttl:
+        today = current_cache_date()
+        if cached["data"] and cached["timestamp"] == today:
             return cached["data"]
 
-        data = {
-            "currentlyReading": fetch_goodreads_data("currently-reading"),
-            "recentlyRead": fetch_goodreads_data("read"),
-        }
-        cache["goodreads"] = {"timestamp": now, "data": data}
-        return data
+        return refresh_goodreads()
     except Exception as error:
+        cached = cache["goodreads"]
+        if cached["data"]:
+            return cached["data"]
         raise HTTPException(status_code=500, detail=str(error))
 
 
 @app.get("/letterboxd")
 def letterboxd():
     try:
-        now = time.time()
         cached = cache["letterboxd"]
-        if cached["data"] and now - cached["timestamp"] < letterboxd_ttl:
+        today = current_cache_date()
+        if cached["data"] and cached["timestamp"] == today:
             return cached["data"]
 
-        data = {"films": fetch_letterboxd_data()}
-        cache["letterboxd"] = {"timestamp": now, "data": data}
-        return data
+        return refresh_letterboxd()
     except Exception as error:
+        cached = cache["letterboxd"]
+        if cached["data"]:
+            return cached["data"]
         raise HTTPException(status_code=500, detail=str(error))

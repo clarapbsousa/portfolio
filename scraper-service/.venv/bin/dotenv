@@ -1,4 +1,4 @@
-#!/Users/claras/Desktop/portfolio/scraper-service/.venv/bin/python
+#!/Users/claras/Desktop/portfolio/scraper-service/.venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

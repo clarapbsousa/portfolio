@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/api/goodreads",
+        "./src/api/letterboxd"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system"
+}

@@ -1,0 +1,498 @@
+[00:00:01.165] Server  LOG     ✓ Ready in 907ms
+[00:01:30.225] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.231] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.239] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.242] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.248] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.251] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.256] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.259] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.270] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.272] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.274] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.279] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.283] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.285] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.291] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.293] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.296] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.298] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.304] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.306] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.308] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.310] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.313] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.314] Server  ERROR   ⨯ ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:30.317] Server  LOG     ✓ Compiled in 150ms
+[00:01:30.424] Browser ERROR   ./src/app/homeClient.tsx:5:1
+Module not found: Can't resolve './components/Header'
+  3 | import { useEffect, useState } from "react";
+  4 | import Image from "next/image";
+> 5 | import Header from "./components/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | type SectionId = "about" | "projects" | "skills" | "media" | "contact";
+  8 |
+
+Import trace:
+  Server Component:
+    ./src/app/homeClient.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found

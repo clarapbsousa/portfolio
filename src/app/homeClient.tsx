@@ -32,8 +32,8 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
     { id: "skills", label: "Skills", icon: "03" },
-    { id: "media", label: "Books & Films", icon: "04" },
-    { id: "contact", label: "Contact", icon: "05" },
+    // { id: "media", label: "Books & Films", icon: "04" },
+    { id: "contact", label: "Contact", icon: "04" },
 ];
 
 const emailAddress = "clara.barros.sousa@gmail.com";
@@ -270,7 +270,7 @@ export default function HomeClient({
                     </div>
                 </section>
 
-                <section id="skills">
+{/* <section id="skills">
                     <div className="container">
                         <div className="section-header">
                             <h2 className="section-title">
@@ -515,7 +515,7 @@ export default function HomeClient({
 
                         </div>
                     </div>
-                </section> 
+                </section> */}
 
                 <section id="contact">
                     <div className="container">

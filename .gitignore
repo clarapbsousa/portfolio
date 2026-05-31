@@ -1,2 +1,5 @@
 node_modules/
 .next/
+
+# Generated data files (fetched from KV at build time)
+public/data/*.json

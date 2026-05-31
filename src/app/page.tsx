@@ -32,8 +32,8 @@ type LetterboxdPayload = {
 const emptyGoodreads: GoodreadsPayload = { currentlyReading: [], recentlyRead: [] };
 const emptyLetterboxd: LetterboxdPayload = { films: [] };
 
-const GOODREADS_RSS_URL = process.env.GOODREADS_RSS_URL || 'https://www.goodreads.com/review/list_rss/144450064';
-const LETTERBOXD_RSS_URL = process.env.LETTERBOXD_RSS_URL || 'https://letterboxd.com/clarapbsousa/rss/';
+const GOODREADS_RSS_URL = process.env.GOODREADS_RSS_URL;
+const LETTERBOXD_RSS_URL = process.env.LETTERBOXD_RSS_URL;
 
 async function loadLocalJson<T>(fileName: string, fallback: T): Promise<{ data: T; error: boolean }> {
     try {
@@ -71,6 +71,11 @@ function parseGoodreadsItems(items: any[]): GoodreadsBook[] {
 }
 
 async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
+    if (!GOODREADS_RSS_URL) {
+        console.warn('GOODREADS_RSS_URL not set, skipping RSS fetch');
+        return emptyGoodreads;
+    }
+
     const baseUrl = GOODREADS_RSS_URL.replace(/\/?$/, '');
 
     try {
@@ -112,6 +117,11 @@ async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
 }
 
 async function fetchLetterboxdRSS(): Promise<LetterboxdPayload> {
+    if (!LETTERBOXD_RSS_URL) {
+        console.warn('LETTERBOXD_RSS_URL not set, skipping RSS fetch');
+        return emptyLetterboxd;
+    }
+
     try {
         const response = await fetch(LETTERBOXD_RSS_URL, {
             headers: { Accept: 'application/rss+xml' },

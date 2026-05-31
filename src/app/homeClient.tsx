@@ -32,8 +32,8 @@ const navItems: Array<{ id: SectionId; label: string; icon: string }> = [
     { id: "about", label: "About", icon: "01" },
     { id: "projects", label: "Projects", icon: "02" },
     { id: "skills", label: "Skills", icon: "03" },
-    // { id: "media", label: "Books & Films", icon: "04" },
-    { id: "contact", label: "Contact", icon: "04" },
+    { id: "media", label: "Books & Films", icon: "04" },
+    { id: "contact", label: "Contact", icon: "05" },
 ];
 
 const emailAddress = "clara.barros.sousa@gmail.com";
@@ -333,7 +333,7 @@ export default function HomeClient({
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                <section id="media" className="media-section">
                     <div className="container">
@@ -375,7 +375,7 @@ export default function HomeClient({
                                     )}
 
                                     {!goodreadsError &&
-                                        goodreadsBooks.slice(0, 3).map((book, index) => (
+                                        goodreadsBooks.slice(0, 1).map((book, index) => (
                                             <div
                                                 className="media-item"
                                                 key={`${book.title}-${index}`}
@@ -511,11 +511,11 @@ export default function HomeClient({
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                </section> */}
+                         </div>
+                     </div>
+                 </section>
 
-                <section id="contact">
+                 <section id="contact">
                     <div className="container">
                         <div className="contact">
                               <h2>Let&apos;s work together</h2>

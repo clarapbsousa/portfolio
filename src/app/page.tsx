@@ -1,3 +1,5 @@
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 import HomeClient from "./homeClient";
 import "./global.css";
 
@@ -29,34 +31,22 @@ type LetterboxdPayload = {
 const emptyGoodreads: GoodreadsPayload = { currentlyReading: [], recentlyRead: [] };
 const emptyLetterboxd: LetterboxdPayload = { films: [] };
 
-async function fetchGoodreads(scraperUrl: string | undefined) {
-    if (!scraperUrl) {
-        return { data: emptyGoodreads, error: true };
-    }
-
+async function loadGoodreadsData(): Promise<{ data: GoodreadsPayload; error: boolean }> {
     try {
-        const response = await fetch(`${scraperUrl}/goodreads`);
-        if (!response.ok) {
-            throw new Error("Failed Goodreads fetch");
-        }
-        const data = (await response.json()) as GoodreadsPayload;
+        const filePath = join(process.cwd(), 'public/data/goodreads.json');
+        const raw = await readFile(filePath, 'utf8');
+        const data = JSON.parse(raw) as GoodreadsPayload;
         return { data, error: false };
     } catch {
         return { data: emptyGoodreads, error: true };
     }
 }
 
-async function fetchLetterboxd(scraperUrl: string | undefined) {
-    if (!scraperUrl) {
-        return { data: emptyLetterboxd, error: true };
-    }
-
+async function loadLetterboxdData(): Promise<{ data: LetterboxdPayload; error: boolean }> {
     try {
-        const response = await fetch(`${scraperUrl}/letterboxd`);
-        if (!response.ok) {
-            throw new Error("Failed Letterboxd fetch");
-        }
-        const data = (await response.json()) as LetterboxdPayload;
+        const filePath = join(process.cwd(), 'public/data/letterboxd.json');
+        const raw = await readFile(filePath, 'utf8');
+        const data = JSON.parse(raw) as LetterboxdPayload;
         return { data, error: false };
     } catch {
         return { data: emptyLetterboxd, error: true };
@@ -64,11 +54,9 @@ async function fetchLetterboxd(scraperUrl: string | undefined) {
 }
 
 export default async function Home() {
-    const scraperUrl = process.env.SCRAPER_SERVICE_URL;
-
     const [goodreadsResult, letterboxdResult] = await Promise.all([
-        fetchGoodreads(scraperUrl),
-        fetchLetterboxd(scraperUrl),
+        loadGoodreadsData(),
+        loadLetterboxdData(),
     ]);
 
     return (

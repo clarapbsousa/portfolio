@@ -188,6 +188,31 @@ export default function HomeClient({
                         <div className="projects-grid">
                           <article className="project-card">
                             <div className="project-content">
+                              <h3>Populi</h3>
+                              <p className="project-desc">
+                                A platform to help citizens find concise, structured, and unbiased information
+                                about the politicians they elect. Features include deputy profiles, legislative
+                                proposals, and an AI chat assistant for better-informed political opinions.
+                              </p>
+                              <div className="project-tech">
+                                <span className="tech-tag">TypeScript</span>
+                                <span className="tech-tag">Next.js</span>
+                                <span className="tech-tag">React</span>
+                                <span className="tech-tag">Python</span>
+                              </div>
+                            </div>
+                            <div className="project-meta">
+                              <span className="project-year">2025</span>
+                              <div className="project-links">
+                                <a href="https://github.com/Populi-Org/populi" className="project-link">
+                                  Source
+                                </a>
+                              </div>
+                            </div>
+                            </article>
+
+                          <article className="project-card">
+                            <div className="project-content">
                               <h3>CherryPick</h3>
                               <p className="project-desc">
                                 Cross-format cultural recommendation platform. Users input a
@@ -232,33 +257,6 @@ export default function HomeClient({
                                     <div className="project-links">
                                         <a
                                             href="https://github.com/clarapbsousa/2Auction"
-                                            className="project-link"
-                                        >
-                                            Source
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article className="project-card">
-                                <div className="project-content">
-                                    <h3>Study@</h3>
-                                    <p className="project-desc">
-                                        Flutter app to help FEUP students find sustainable study
-                                        spots with maps, reviews, achievements, and personalized
-                                        profiles. Built as a team project for Software Engineering 2023/2024.
-                                    </p>
-                                    <div className="project-tech">
-                                        <span className="tech-tag">Dart</span>
-                                        <span className="tech-tag">Flutter</span>
-                                        <span className="tech-tag">SQLite</span>
-                                    </div>
-                                </div>
-                                <div className="project-meta">
-                                    <span className="project-year">2024</span>
-                                    <div className="project-links">
-                                        <a
-                                            href="https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T4"
                                             className="project-link"
                                         >
                                             Source

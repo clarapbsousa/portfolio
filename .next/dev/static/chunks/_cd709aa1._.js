@@ -660,7 +660,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                     className: "project-content",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            children: "CherryPick"
+                                                            children: "Populi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
                                                             lineNumber: 191,
@@ -668,7 +668,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "project-desc",
-                                                            children: "Cross-format cultural recommendation platform. Users input a book, movie, show, or album and receive curated picks across media types. Hackathon prototype with a full redesign in progress."
+                                                            children: "A platform to help citizens find concise, structured, and unbiased information about the politicians they elect. Features include deputy profiles, legislative proposals, and an AI chat assistant for better-informed political opinions."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
                                                             lineNumber: 192,
@@ -680,6 +680,14 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
                                                                     children: "TypeScript"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                                    lineNumber: 198,
+                                                                    columnNumber: 33
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "tech-tag",
+                                                                    children: "Next.js"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 199,
@@ -695,24 +703,16 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
-                                                                    children: "Node.js"
+                                                                    children: "Python"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 201,
-                                                                    columnNumber: 33
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "tech-tag",
-                                                                    children: "Appwrite"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                                    lineNumber: 202,
                                                                     columnNumber: 33
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 198,
+                                                            lineNumber: 197,
                                                             columnNumber: 31
                                                         }, this)
                                                     ]
@@ -729,29 +729,29 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                             children: "2025"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 205,
                                                             columnNumber: 31
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "project-links",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                href: "https://github.com/HenriqueSFernandes/CherryPick",
+                                                                href: "https://github.com/Populi-Org/populi",
                                                                 className: "project-link",
                                                                 children: "Source"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                                lineNumber: 208,
+                                                                lineNumber: 207,
                                                                 columnNumber: 33
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 207,
+                                                            lineNumber: 206,
                                                             columnNumber: 31
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/homeClient.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 204,
                                                     columnNumber: 29
                                                 }, this)
                                             ]
@@ -767,66 +767,66 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                     className: "project-content",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            children: "2Auction"
+                                                            children: "CherryPick"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 217,
-                                                            columnNumber: 37
+                                                            lineNumber: 216,
+                                                            columnNumber: 31
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "project-desc",
-                                                            children: "Web application that brings live auction dynamics online, enabling users to buy and sell items with a secure, interactive experience for bidders and sellers."
+                                                            children: "Cross-format cultural recommendation platform. Users input a book, movie, show, or album and receive curated picks across media types. Hackathon prototype with a full redesign in progress."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 218,
-                                                            columnNumber: 37
+                                                            lineNumber: 217,
+                                                            columnNumber: 31
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "project-tech",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
-                                                                    children: "PHP"
+                                                                    children: "TypeScript"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 224,
-                                                                    columnNumber: 41
+                                                                    columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
-                                                                    children: "Laravel"
+                                                                    children: "React"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 225,
-                                                                    columnNumber: 41
+                                                                    columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
-                                                                    children: "Blade"
+                                                                    children: "Node.js"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 226,
-                                                                    columnNumber: 41
+                                                                    columnNumber: 33
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "tech-tag",
-                                                                    children: "PostgreSQL"
+                                                                    children: "Appwrite"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/homeClient.tsx",
                                                                     lineNumber: 227,
-                                                                    columnNumber: 41
+                                                                    columnNumber: 33
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
                                                             lineNumber: 223,
-                                                            columnNumber: 37
+                                                            columnNumber: 31
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/homeClient.tsx",
-                                                    lineNumber: 216,
-                                                    columnNumber: 33
+                                                    lineNumber: 215,
+                                                    columnNumber: 29
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "project-meta",
@@ -837,6 +837,113 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
                                                             lineNumber: 231,
+                                                            columnNumber: 31
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "project-links",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                href: "https://github.com/HenriqueSFernandes/CherryPick",
+                                                                className: "project-link",
+                                                                children: "Source"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/homeClient.tsx",
+                                                                lineNumber: 233,
+                                                                columnNumber: 33
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/homeClient.tsx",
+                                                            lineNumber: 232,
+                                                            columnNumber: 31
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                    lineNumber: 230,
+                                                    columnNumber: 29
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/app/homeClient.tsx",
+                                            lineNumber: 214,
+                                            columnNumber: 27
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                                            className: "project-card",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "project-content",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                            children: "2Auction"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/homeClient.tsx",
+                                                            lineNumber: 242,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "project-desc",
+                                                            children: "Web application that brings live auction dynamics online, enabling users to buy and sell items with a secure, interactive experience for bidders and sellers."
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/homeClient.tsx",
+                                                            lineNumber: 243,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "project-tech",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "tech-tag",
+                                                                    children: "PHP"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                                    lineNumber: 249,
+                                                                    columnNumber: 41
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "tech-tag",
+                                                                    children: "Laravel"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                                    lineNumber: 250,
+                                                                    columnNumber: 41
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "tech-tag",
+                                                                    children: "Blade"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                                    lineNumber: 251,
+                                                                    columnNumber: 41
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "tech-tag",
+                                                                    children: "PostgreSQL"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                                    lineNumber: 252,
+                                                                    columnNumber: 41
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/homeClient.tsx",
+                                                            lineNumber: 248,
+                                                            columnNumber: 37
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/homeClient.tsx",
+                                                    lineNumber: 241,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "project-meta",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "project-year",
+                                                            children: "2025"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/homeClient.tsx",
+                                                            lineNumber: 256,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -847,123 +954,24 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                                 children: "Source"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                                lineNumber: 233,
+                                                                lineNumber: 258,
                                                                 columnNumber: 41
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 232,
+                                                            lineNumber: 257,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/homeClient.tsx",
-                                                    lineNumber: 230,
+                                                    lineNumber: 255,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/homeClient.tsx",
-                                            lineNumber: 215,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
-                                            className: "project-card",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "project-content",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            children: "Study@"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 245,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "project-desc",
-                                                            children: "Flutter app to help FEUP students find sustainable study spots with maps, reviews, achievements, and personalized profiles. Built as a team project for Software Engineering 2023/2024."
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 246,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "project-tech",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "tech-tag",
-                                                                    children: "Dart"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                                    lineNumber: 252,
-                                                                    columnNumber: 41
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "tech-tag",
-                                                                    children: "Flutter"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                                    lineNumber: 253,
-                                                                    columnNumber: 41
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "tech-tag",
-                                                                    children: "SQLite"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                                    lineNumber: 254,
-                                                                    columnNumber: 41
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 251,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                    lineNumber: 244,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "project-meta",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "project-year",
-                                                            children: "2024"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 258,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "project-links",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                href: "https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T4",
-                                                                className: "project-link",
-                                                                children: "Source"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/homeClient.tsx",
-                                                                lineNumber: 260,
-                                                                columnNumber: 41
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/homeClient.tsx",
-                                                            lineNumber: 259,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/homeClient.tsx",
-                                                    lineNumber: 257,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/app/homeClient.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 240,
                                             columnNumber: 29
                                         }, this)
                                     ]
@@ -994,7 +1002,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                         children: "Let's work together"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/homeClient.tsx",
-                                        lineNumber: 523,
+                                        lineNumber: 521,
                                         columnNumber: 31
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1008,13 +1016,13 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                 children: emailAddress
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                lineNumber: 526,
+                                                lineNumber: 524,
                                                 columnNumber: 31
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/homeClient.tsx",
-                                        lineNumber: 524,
+                                        lineNumber: 522,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1022,7 +1030,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                         children: "Check out my GitHub and LinkedIn to see my work, or visit my Goodreads and Letterboxd to see what movies and books I'm enjoying."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/homeClient.tsx",
-                                        lineNumber: 530,
+                                        lineNumber: 528,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1034,7 +1042,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                 children: "GitHub"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                lineNumber: 535,
+                                                lineNumber: 533,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1043,7 +1051,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                 children: "Linkedin"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                lineNumber: 538,
+                                                lineNumber: 536,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1052,7 +1060,7 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                 children: "Letterboxd"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                lineNumber: 541,
+                                                lineNumber: 539,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1061,29 +1069,29 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                                                 children: "Goodreads"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/homeClient.tsx",
-                                                lineNumber: 544,
+                                                lineNumber: 542,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/homeClient.tsx",
-                                        lineNumber: 534,
+                                        lineNumber: 532,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/homeClient.tsx",
-                                lineNumber: 522,
+                                lineNumber: 520,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/homeClient.tsx",
-                            lineNumber: 521,
+                            lineNumber: 519,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/homeClient.tsx",
-                        lineNumber: 520,
+                        lineNumber: 518,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1092,12 +1100,12 @@ function HomeClient({ goodreadsBooks, recentlyReadBooks, letterboxdFilms, goodre
                             children: "© 2026 Clara Sousa"
                         }, void 0, false, {
                             fileName: "[project]/src/app/homeClient.tsx",
-                            lineNumber: 553,
+                            lineNumber: 551,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/homeClient.tsx",
-                        lineNumber: 552,
+                        lineNumber: 550,
                         columnNumber: 17
                     }, this)
                 ]

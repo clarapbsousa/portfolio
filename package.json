@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run fetch-data && NEXT_DISABLE_TURBOPACK=1 next dev",
     "build": "npm run fetch-data; next build",
+    "dev": "npm run fetch-data && NEXT_DISABLE_TURBOPACK=1 next dev",
     "fetch-data": "node scripts/fetch-kv-data.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.11",
     "fast-xml-parser": "^5.8.0",
     "next": "^16.2.6",
     "react": "19.2.3",
@@ -23,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "^16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.95.0"
   }
 }

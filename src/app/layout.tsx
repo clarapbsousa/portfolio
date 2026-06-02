@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./global.css";
 
 export const metadata: Metadata = {
   title: "Clara Sousa",
@@ -17,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>

@@ -1,203 +1,12 @@
-import { readFile } from 'fs/promises';
-import { join } from 'path';
-import { XMLParser } from 'fast-xml-parser';
-import HomeClient from "./homeClient";
-import "./global.css";
+import { loadGoodreadsData } from "@/lib/goodreads";
+import { loadLetterboxdData } from "@/lib/letterboxd";
+import HomeShell from "@/components/providers/HomeShell";
+import HeroSection from "@/components/sections/HeroSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import MediaSection from "@/components/sections/MediaSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export const revalidate = 86400;
-
-type GoodreadsBook = {
-    title: string;
-    author?: string | null;
-    coverUrl?: string | null;
-};
-
-type LetterboxdFilm = {
-    title: string;
-    director?: string | null;
-    link?: string | null;
-    posterUrl?: string | null;
-    rating?: string | null;
-};
-
-type GoodreadsPayload = {
-    currentlyReading: GoodreadsBook[];
-    recentlyRead: GoodreadsBook[];
-};
-
-type LetterboxdPayload = {
-    films: LetterboxdFilm[];
-};
-
-const emptyGoodreads: GoodreadsPayload = { currentlyReading: [], recentlyRead: [] };
-const emptyLetterboxd: LetterboxdPayload = { films: [] };
-
-const GOODREADS_RSS_URL = process.env.GOODREADS_RSS_URL;
-const LETTERBOXD_RSS_URL = process.env.LETTERBOXD_RSS_URL;
-
-async function loadLocalJson<T>(fileName: string, fallback: T): Promise<{ data: T; error: boolean }> {
-    try {
-        const filePath = join(process.cwd(), 'public/data', fileName);
-        const raw = await readFile(filePath, 'utf8');
-        const data = JSON.parse(raw) as T;
-        return { data, error: false };
-    } catch {
-        return { data: fallback, error: true };
-    }
-}
-
-function decimalToStars(rating: number): string {
-    const full = Math.floor(rating);
-    const half = rating % 1 >= 0.5 ? '½' : '';
-    return '★'.repeat(full) + half;
-}
-
-function parseGoodreadsItem(item: any): GoodreadsBook {
-    const titleRaw = item.title || '';
-    const author = item.author_name || null;
-    let title = titleRaw;
-    if (author && titleRaw.toLowerCase().endsWith(` by ${author.toLowerCase()}`)) {
-        title = titleRaw.slice(0, -(` by ${author}`.length));
-    }
-    const coverUrl =
-        item.book_large_image_url ||
-        item.book_image_url ||
-        item.book_medium_image_url ||
-        item.book_small_image_url ||
-        null;
-    return { title: title.trim(), author, coverUrl };
-}
-
-async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
-    if (!GOODREADS_RSS_URL) {
-        console.warn('GOODREADS_RSS_URL not set, skipping RSS fetch');
-        return emptyGoodreads;
-    }
-
-    try {
-        const response = await fetch(GOODREADS_RSS_URL, {
-            headers: { Accept: 'application/rss+xml' },
-        });
-
-        if (!response.ok) {
-            return emptyGoodreads;
-        }
-
-        const parser = new XMLParser({
-            ignoreAttributes: false,
-            attributeNamePrefix: '@_',
-            parseAttributeValue: false,
-            textNodeName: '#text',
-        });
-
-        const xmlText = await response.text();
-        const parsed = parser.parse(xmlText);
-        const items = parsed?.rss?.channel?.item;
-        if (!items) return emptyGoodreads;
-
-        const itemArray = Array.isArray(items) ? items : [items];
-
-        let currentlyReading: GoodreadsBook[] = [];
-        let recentlyRead: GoodreadsBook[] = [];
-
-        for (const item of itemArray) {
-            const book = parseGoodreadsItem(item);
-            const shelves = (item.shelves || '').toLowerCase();
-            
-            if (shelves.includes('currently-reading')) {
-                currentlyReading.push(book);
-            } else {
-                recentlyRead.push(book);
-            }
-        }
-
-        return { currentlyReading, recentlyRead };
-    } catch {
-        return emptyGoodreads;
-    }
-}
-
-async function fetchLetterboxdRSS(): Promise<LetterboxdPayload> {
-    if (!LETTERBOXD_RSS_URL) {
-        console.warn('LETTERBOXD_RSS_URL not set, skipping RSS fetch');
-        return emptyLetterboxd;
-    }
-
-    try {
-        const response = await fetch(LETTERBOXD_RSS_URL, {
-            headers: { Accept: 'application/rss+xml' },
-        });
-
-        if (!response.ok) {
-            return emptyLetterboxd;
-        }
-
-        const parser = new XMLParser({
-            ignoreAttributes: false,
-            attributeNamePrefix: '@_',
-            parseAttributeValue: false,
-            textNodeName: '#text',
-        });
-
-        const xmlText = await response.text();
-        const parsed = parser.parse(xmlText);
-        const items = parsed?.rss?.channel?.item;
-        if (!items) return emptyLetterboxd;
-
-        const itemArray = Array.isArray(items) ? items : [items];
-
-        const films: LetterboxdFilm[] = itemArray.map((item: any) => {
-            const filmTitle = item['letterboxd:filmTitle'] || '';
-            const rawTitle = item.title || '';
-            const title = filmTitle || rawTitle.split(' - ')[0] || rawTitle;
-            const director = item['dc:creator'] || null;
-            const link = item.link || null;
-
-            const ratingRaw = item['letterboxd:memberRating'];
-            let rating: string | null = null;
-            if (ratingRaw !== undefined && ratingRaw !== null) {
-                const num = parseFloat(ratingRaw);
-                if (!isNaN(num)) {
-                    rating = decimalToStars(num);
-                }
-            }
-
-            return { title: title.trim(), director, link, posterUrl: null, rating };
-        });
-
-        return { films };
-    } catch {
-        return emptyLetterboxd;
-    }
-}
-
-async function loadGoodreadsData(): Promise<{ data: GoodreadsPayload; error: boolean }> {
-    // Try local JSON first (from KV/build script)
-    const local = await loadLocalJson<GoodreadsPayload>('goodreads.json', emptyGoodreads);
-    if (!local.error) {
-        return local;
-    }
-
-    // Fallback: fetch RSS directly at build time
-    console.log('Goodreads local JSON not found, fetching RSS directly...');
-    const data = await fetchGoodreadsRSS();
-    const hasData = data.currentlyReading.length > 0 || data.recentlyRead.length > 0;
-    return { data, error: !hasData };
-}
-
-async function loadLetterboxdData(): Promise<{ data: LetterboxdPayload; error: boolean }> {
-    // Try local JSON first (from KV/build script)
-    const local = await loadLocalJson<LetterboxdPayload>('letterboxd.json', emptyLetterboxd);
-    if (!local.error) {
-        return local;
-    }
-
-    // Fallback: fetch RSS directly at build time
-    console.log('Letterboxd local JSON not found, fetching RSS directly...');
-    const data = await fetchLetterboxdRSS();
-    const hasData = data.films.length > 0;
-    return { data, error: !hasData };
-}
 
 export default async function Home() {
     const [goodreadsResult, letterboxdResult] = await Promise.all([
@@ -206,12 +15,17 @@ export default async function Home() {
     ]);
 
     return (
-        <HomeClient
-            goodreadsBooks={goodreadsResult.data.currentlyReading}
-            recentlyReadBooks={goodreadsResult.data.recentlyRead}
-            letterboxdFilms={letterboxdResult.data.films}
-            goodreadsError={goodreadsResult.error}
-            letterboxdError={letterboxdResult.error}
-        />
+        <HomeShell>
+            <HeroSection />
+            <ProjectsSection />
+            <MediaSection
+                goodreadsBooks={goodreadsResult.data.currentlyReading}
+                recentlyReadBooks={goodreadsResult.data.recentlyRead}
+                letterboxdFilms={letterboxdResult.data.films}
+                goodreadsError={goodreadsResult.error}
+                letterboxdError={letterboxdResult.error}
+            />
+            <ContactSection />
+        </HomeShell>
     );
 }

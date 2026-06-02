@@ -1,14 +1,12 @@
 "use client";
 
-type SectionId = "about" | "projects" | "skills" | "media" | "contact";
-
-type NavItem = { id: SectionId; label: string; icon: string };
+import { SectionId } from "@/types";
 
 type HeaderProps = {
 	name: string;
 	roleLineOne: string;
 	roleLineTwo: string;
-	navItems: NavItem[];
+	navItems: Array<{ id: SectionId; label: string; icon: string }>;
 	activeSection: SectionId;
 	isMenuOpen: boolean;
 	onToggleMenu: () => void;
@@ -78,10 +76,10 @@ export default function Header({
 
 				<div className="sidebar-footer">
 					<div className="social-links">
-						<a href="https://github.com/claras" className="social-link" title="GitHub">
+						<a href="https://github.com/clarapbsousa" className="social-link" title="GitHub">
 							Gh
 						</a>
-						<a href="https://www.linkedin.com/in/clarasousa" className="social-link" title="LinkedIn">
+						<a href="https://linkedin.com/in/clarapbsousa" className="social-link" title="LinkedIn">
 							Li
 						</a>
 						<a href="https://boxd.it/bItH7" className="social-link" title="Letterboxd">

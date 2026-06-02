@@ -52,22 +52,20 @@ function decimalToStars(rating: number): string {
     return '★'.repeat(full) + half;
 }
 
-function parseGoodreadsItems(items: any[]): GoodreadsBook[] {
-    return items.map((item: any) => {
-        const titleRaw = item.title || '';
-        const author = item.author_name || null;
-        let title = titleRaw;
-        if (author && titleRaw.toLowerCase().endsWith(` by ${author.toLowerCase()}`)) {
-            title = titleRaw.slice(0, -(` by ${author}`.length));
-        }
-        const coverUrl =
-            item.book_large_image_url ||
-            item.book_image_url ||
-            item.book_medium_image_url ||
-            item.book_small_image_url ||
-            null;
-        return { title: title.trim(), author, coverUrl };
-    });
+function parseGoodreadsItem(item: any): GoodreadsBook {
+    const titleRaw = item.title || '';
+    const author = item.author_name || null;
+    let title = titleRaw;
+    if (author && titleRaw.toLowerCase().endsWith(` by ${author.toLowerCase()}`)) {
+        title = titleRaw.slice(0, -(` by ${author}`.length));
+    }
+    const coverUrl =
+        item.book_large_image_url ||
+        item.book_image_url ||
+        item.book_medium_image_url ||
+        item.book_small_image_url ||
+        null;
+    return { title: title.trim(), author, coverUrl };
 }
 
 async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
@@ -76,13 +74,14 @@ async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
         return emptyGoodreads;
     }
 
-    const baseUrl = GOODREADS_RSS_URL.replace(/\/?$/, '');
-
     try {
-        const [currentlyReadingRes, readRes] = await Promise.all([
-            fetch(`${baseUrl}?shelf=currently-reading`, { headers: { Accept: 'application/rss+xml' } }),
-            fetch(`${baseUrl}?shelf=read`, { headers: { Accept: 'application/rss+xml' } }),
-        ]);
+        const response = await fetch(GOODREADS_RSS_URL, {
+            headers: { Accept: 'application/rss+xml' },
+        });
+
+        if (!response.ok) {
+            return emptyGoodreads;
+        }
 
         const parser = new XMLParser({
             ignoreAttributes: false,
@@ -91,22 +90,24 @@ async function fetchGoodreadsRSS(): Promise<GoodreadsPayload> {
             textNodeName: '#text',
         });
 
+        const xmlText = await response.text();
+        const parsed = parser.parse(xmlText);
+        const items = parsed?.rss?.channel?.item;
+        if (!items) return emptyGoodreads;
+
+        const itemArray = Array.isArray(items) ? items : [items];
+
         let currentlyReading: GoodreadsBook[] = [];
         let recentlyRead: GoodreadsBook[] = [];
 
-        if (currentlyReadingRes.ok) {
-            const parsed = parser.parse(await currentlyReadingRes.text());
-            const items = parsed?.rss?.channel?.item;
-            if (items) {
-                currentlyReading = parseGoodreadsItems(Array.isArray(items) ? items : [items]);
-            }
-        }
-
-        if (readRes.ok) {
-            const parsed = parser.parse(await readRes.text());
-            const items = parsed?.rss?.channel?.item;
-            if (items) {
-                recentlyRead = parseGoodreadsItems(Array.isArray(items) ? items : [items]);
+        for (const item of itemArray) {
+            const book = parseGoodreadsItem(item);
+            const shelves = (item.shelves || '').toLowerCase();
+            
+            if (shelves.includes('currently-reading')) {
+                currentlyReading.push(book);
+            } else {
+                recentlyRead.push(book);
             }
         }
 

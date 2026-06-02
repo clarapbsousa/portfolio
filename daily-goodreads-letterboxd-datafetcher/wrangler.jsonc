@@ -30,7 +30,8 @@
   ],
   "vars": {
     "GOODREADS_USER_ID": "144450064",
-    "LETTERBOXD_USERNAME": "clarapbsousa"
+    "LETTERBOXD_USERNAME": "clarapbsousa",
+    "PAGES_DEPLOY_HOOK_URL": "https://api.cloudflare.com/client/v4/workers/builds/deploy_hooks/563fce45-0019-44a7-8bec-0601437b901a"
   },
   "triggers": {
     "crons": [

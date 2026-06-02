@@ -10,12 +10,11 @@ type GoodreadsBook = {
     title: string;
     author?: string | null;
     coverUrl?: string | null;
-    description?: string | null;
 };
 
 type LetterboxdFilm = {
     title: string;
-    description?: string | null;
+    director?: string | null;
     link?: string | null;
     posterUrl?: string | null;
     rating?: string | null;
@@ -151,7 +150,7 @@ async function fetchLetterboxdRSS(): Promise<LetterboxdPayload> {
             const filmTitle = item['letterboxd:filmTitle'] || '';
             const rawTitle = item.title || '';
             const title = filmTitle || rawTitle.split(' - ')[0] || rawTitle;
-            const description = item['dc:creator'] || null;
+            const director = item['dc:creator'] || null;
             const link = item.link || null;
 
             const ratingRaw = item['letterboxd:memberRating'];
@@ -163,7 +162,7 @@ async function fetchLetterboxdRSS(): Promise<LetterboxdPayload> {
                 }
             }
 
-            return { title: title.trim(), description, link, posterUrl: null, rating };
+            return { title: title.trim(), director, link, posterUrl: null, rating };
         });
 
         return { films };

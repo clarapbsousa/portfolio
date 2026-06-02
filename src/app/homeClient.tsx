@@ -14,7 +14,7 @@ type GoodreadsBook = {
 
 type LetterboxdFilm = {
     title: string;
-    description?: string | null;
+    director?: string | null;
     link?: string | null;
     posterUrl?: string | null;
     rating?: string | null;
@@ -503,7 +503,7 @@ export default function HomeClient({
                                                         )}
                                                     </div>
                                                     <div className="media-creator">
-                                                        {film.description ?? "description"}
+                                                        {film.director ?? "Director"}
                                                     </div>
                                                 </div>
                                             </div>

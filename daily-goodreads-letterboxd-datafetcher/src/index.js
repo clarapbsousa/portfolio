@@ -363,50 +363,93 @@ class XMLParser {
   parse(xml) {
     const result = { rss: { channel: { item: [] } } };
     
-    // Extract channel info
-    const channelMatch = xml.match(/<channel>([\s\S]*?)<\/channel>/);
-    if (!channelMatch) {
-      console.error('No <channel> found in XML');
-      return result;
-    }
-    
-    const channelXml = channelMatch[1];
-    
-    // Extract items using a more robust regex
-    // Split by <item> tags instead of regex matching
+    // Extract items by splitting on <item> tags
     const parts = xml.split('<item>');
     
     for (let i = 1; i < parts.length; i++) {
       const itemXml = parts[i].split('</item>')[0];
-      const item = {};
-      
-      // Extract all simple fields
-      const tagRegex = /<([^>]+)>([^<]*)<\/\1>/g;
-      let match;
-      while ((match = tagRegex.exec(itemXml)) !== null) {
-        const tagName = match[1].trim();
-        // Handle namespaced tags by keeping the full name
-        item[tagName] = match[2];
-      }
-      
-      // Also try to extract fields with namespace prefixes
-      // e.g., <letterboxd:filmTitle>...</letterboxd:filmTitle>
-      const namespacedRegex = /<([\w:]+)>([^<]*)<\/\1>/g;
-      while ((match = namespacedRegex.exec(itemXml)) !== null) {
-        item[match[1]] = match[2];
-      }
-      
-      // Extract CDATA content for description
-      const cdataMatch = itemXml.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/);
-      if (cdataMatch) {
-        item.description = cdataMatch[1];
-      }
-      
+      const item = this.parseItem(itemXml);
       result.rss.channel.item.push(item);
     }
     
     console.log(`XMLParser: Extracted ${result.rss.channel.item.length} items`);
     
     return result;
+  }
+
+  parseItem(xml) {
+    const item = {};
+    
+    // List of known fields to extract
+    const fields = [
+      'title',
+      'link', 
+      'author_name',
+      'shelves',
+      'book_large_image_url',
+      'book_image_url', 
+      'book_medium_image_url',
+      'book_small_image_url',
+      'description',
+      'pubDate',
+      'guid',
+      'isbn',
+      'isbn13'
+    ];
+    
+    for (const field of fields) {
+      const value = this.extractField(xml, field);
+      if (value !== null) {
+        item[field] = value;
+      }
+    }
+    
+    // Also extract namespaced fields (Letterboxd)
+    const namespacedFields = [
+      'letterboxd:filmTitle',
+      'letterboxd:filmYear',
+      'letterboxd:memberRating',
+      'dc:creator'
+    ];
+    
+    for (const field of namespacedFields) {
+      const value = this.extractField(xml, field);
+      if (value !== null) {
+        item[field] = value;
+      }
+    }
+    
+    return item;
+  }
+
+  extractField(xml, fieldName) {
+    // Match field with or without namespace
+    const escapedName = fieldName.replace(/:/g, '\\:');
+    const regex = new RegExp(`<${fieldName}>([\\s\\S]*?)<\\/${fieldName}>`, 'i');
+    const match = xml.match(regex);
+    
+    if (match) {
+      let value = match[1];
+      
+      // Remove CDATA wrapper if present
+      if (value.startsWith('<![CDATA[') && value.endsWith(']]>')) {
+        value = value.slice(9, -3);
+      }
+      
+      // Trim whitespace
+      value = value.trim();
+      
+      // Decode basic HTML entities
+      value = value
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'");
+      
+      return value;
+    }
+    
+    return null;
   }
 }

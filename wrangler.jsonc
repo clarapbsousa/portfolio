@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio",
+  "name": "daily-goodreads-letterboxd-datafetcher",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-06-02",
   "compatibility_flags": [
@@ -17,7 +17,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "portfolio"
+      "service": "daily-goodreads-letterboxd-datafetcher"
     }
   ],
   "images": {

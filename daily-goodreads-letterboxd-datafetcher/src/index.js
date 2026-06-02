@@ -69,7 +69,14 @@ async function fetchGoodreads(env) {
   console.log('Fetching RSS from:', env.GOODREADS_RSS_URL);
 
   const response = await fetch(env.GOODREADS_RSS_URL, {
-    headers: { Accept: 'application/rss+xml' },
+    headers: {
+      'Accept': 'application/rss+xml, application/xml; q=0.9, */*; q=0.8',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept-Language': 'en-US,en;q=0.9',
+      'Accept-Encoding': 'gzip, deflate, br',
+      'Referer': 'https://www.goodreads.com/',
+      'Connection': 'keep-alive',
+    },
   });
 
   console.log('Goodreads RSS response status:', response.status);
@@ -225,8 +232,8 @@ async function fetchLetterboxd(env) {
       });
     }
     
-    // Scrape poster from film page (limited to first 5 to avoid timeout)
-    if (film.link && i < 5) {
+    // Scrape poster from film page (limit to first 10 to avoid worker timeout)
+    if (film.link && i < 10) {
       try {
         console.log(`Scraping poster for: ${film.title}`);
         const posterUrl = await scrapeLetterboxdPoster(film.link);

@@ -4,12 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "npm run fetch-data && NEXT_DISABLE_TURBOPACK=1 next dev",
-    "build": "next build",
+    "build": "npm run fetch-data; next build",
     "fetch-data": "node scripts/fetch-kv-data.mjs",
     "start": "next start",
-    "lint": "eslint",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
+    "lint": "eslint"
   },
   "dependencies": {
     "fast-xml-parser": "^5.8.0",
@@ -18,7 +16,6 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.19.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -26,7 +23,6 @@
     "eslint": "^9",
     "eslint-config-next": "^16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "wrangler": "^4.96.0"
+    "typescript": "^5"
   }
 }

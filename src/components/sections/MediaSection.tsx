@@ -185,7 +185,7 @@ export default function MediaSection({
                                                 )}
                                             </div>
                                             <div className="media-creator">
-                                                {film.director ?? "Director"}
+                                                {film.description ?? "description"}
                                             </div>
                                         </div>
                                     </div>

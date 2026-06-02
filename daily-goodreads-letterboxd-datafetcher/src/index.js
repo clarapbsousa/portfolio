@@ -292,7 +292,7 @@ async function fetchLetterboxd(env) {
     if (i < 3) {
       console.log(`Film ${i}:`, {
         title: film.title,
-        director: film.director,
+        description: film.description,
         link: film.link ? 'PRESENT' : 'MISSING'
       });
     }
@@ -333,9 +333,9 @@ function parseLetterboxdItem(item) {
   const rawTitle = item.title || '';
   const title = filmTitle || rawTitle.split(' - ')[0] || rawTitle;
   
-  // dc:creator in Letterboxd RSS is the USER, not the director
+  // dc:creator in Letterboxd RSS is the USER, not the description
   // We'll set it to null and let the UI handle it
-  const director = null;
+  const description = null;
   const link = item.link || null;
 
   const ratingRaw = item['letterboxd:memberRating'];
@@ -347,7 +347,7 @@ function parseLetterboxdItem(item) {
     }
   }
 
-  return { title: title.trim(), director, link, posterUrl: null, rating };
+  return { title: title.trim(), description, link, posterUrl: null, rating };
 }
 
 function decimalToStars(rating) {

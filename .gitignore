@@ -6,6 +6,7 @@ public/data/*.json
 
 # Local environment variables
 .env*.local
+.env.local
 
 # Debug logs and system files
 *.log

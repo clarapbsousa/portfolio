@@ -232,8 +232,8 @@ async function fetchLetterboxd(env) {
       });
     }
     
-    // Scrape poster from film page (limit to first 10 to avoid worker timeout)
-    if (film.link && i < 10) {
+    // Scrape poster from film page (only first 4 since site shows 4 movies)
+    if (film.link && i < 4) {
       try {
         console.log(`Scraping poster for: ${film.title}`);
         const posterUrl = await scrapeLetterboxdPoster(film.link);

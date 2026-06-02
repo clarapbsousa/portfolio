@@ -110,24 +110,27 @@ async function fetchGoodreads(env) {
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
+    const book = parseGoodreadsItem(item);
     
     // Log first few items for debugging
     if (i < 3) {
-      console.log(`Item ${i} raw fields:`, {
-        title: item.title ? item.title.substring(0, 50) : 'MISSING',
-        author_name: item.author_name || 'MISSING',
-        shelves: item.shelves || 'MISSING',
-        book_large_image_url: item.book_large_image_url ? 'PRESENT' : 'MISSING'
+      console.log(`Item ${i}:`, {
+        title: book.title,
+        shelves: book.shelves || 'MISSING',
+        readAt: book.readAt || 'NOT READ',
+        rating: book.rating || 'NO RATING'
       });
     }
-
-    const book = parseGoodreadsItem(item);
-    const shelves = (item.shelves || '').toLowerCase();
     
-    // Check multiple shelf patterns
-    const isCurrentlyReading = 
-      shelves.includes('currently-reading') || 
-      shelves.includes('currently reading');
+    // Skip "to-read" books
+    const shelves = (book.shelves || '').toLowerCase();
+    if (shelves.includes('to-read') && !book.readAt && !book.rating) {
+      console.log(`Skipping "to-read" book: ${book.title}`);
+      continue;
+    }
+    
+    // Check if currently reading (has currently-reading shelf but no read date)
+    const isCurrentlyReading = shelves.includes('currently-reading') && !book.readAt;
     
     if (isCurrentlyReading) {
       currentlyReading.push(book);
@@ -136,9 +139,20 @@ async function fetchGoodreads(env) {
     }
   }
 
-  console.log(`Categorized: ${currentlyReading.length} currently reading, ${recentlyRead.length} recently read`);
+  // Sort recentlyRead by read date (most recent first)
+  recentlyRead.sort((a, b) => {
+    if (!a.readAt) return 1;
+    if (!b.readAt) return -1;
+    return new Date(b.readAt) - new Date(a.readAt);
+  });
 
-  const data = { currentlyReading, recentlyRead };
+  // Take only first currently-reading + 2 most recent read
+  const limitedCurrentlyReading = currentlyReading.slice(0, 1);
+  const limitedRecentlyRead = recentlyRead.slice(0, 2);
+
+  console.log(`Categorized: ${limitedCurrentlyReading.length} currently reading, ${limitedRecentlyRead.length} recently read (skipped ${items.length - limitedCurrentlyReading.length - limitedRecentlyRead.length})`);
+
+  const data = { currentlyReading: limitedCurrentlyReading, recentlyRead: limitedRecentlyRead };
   
   // Store in KV
   console.log('Storing goodreads data in KV...');
@@ -146,7 +160,7 @@ async function fetchGoodreads(env) {
     expirationTtl: 172800, // 2 days
   });
 
-  console.log(`=== Goodreads fetch complete: ${currentlyReading.length} currently reading, ${recentlyRead.length} recently read ===`);
+  console.log(`=== Goodreads fetch complete: ${limitedCurrentlyReading.length} currently reading, ${limitedRecentlyRead.length} recently read ===`);
   
   return data;
 }
@@ -161,23 +175,74 @@ function parseGoodreadsItem(item) {
     title = titleRaw.slice(0, -(` by ${author}`.length));
   }
   
-  // Try multiple cover image fields
-  const coverUrl =
-    item.book_large_image_url ||
-    item.book_image_url ||
-    item.book_medium_image_url ||
-    item.book_small_image_url ||
-    extractImageFromDescription(item.description) ||
-    null;
+  // Parse description text for additional fields
+  const description = item.description || '';
+  const parsedDesc = parseGoodreadsDescription(description);
+  
+  // Get cover URL - prefer medium size (_SX98_)
+  let coverUrl = parsedDesc.coverUrl || null;
+  if (coverUrl) {
+    // Upgrade to medium size if it's a small thumbnail
+    coverUrl = coverUrl
+      .replace('_SX50_', '_SX98_')
+      .replace('_SY75_', '_SX98_')
+      .replace('_SY475_', '_SX98_');
+  }
     
-  return { title: title.trim(), author, coverUrl };
+  return { 
+    title: title.trim(), 
+    author, 
+    coverUrl,
+    shelves: parsedDesc.shelves,
+    readAt: parsedDesc.readAt,
+    rating: parsedDesc.rating
+  };
 }
 
-function extractImageFromDescription(description) {
-  if (!description) return null;
-  // Try to extract img src from HTML description
+function parseGoodreadsDescription(description) {
+  if (!description) {
+    return { shelves: null, readAt: null, rating: null, coverUrl: null };
+  }
+  
+  const result = {
+    shelves: null,
+    readAt: null,
+    rating: null,
+    coverUrl: null
+  };
+  
+  // Extract shelves
+  const shelvesMatch = description.match(/shelves:\s*([^<\n]+)/i);
+  if (shelvesMatch) {
+    result.shelves = shelvesMatch[1].trim();
+  }
+  
+  // Extract read at date
+  const readAtMatch = description.match(/read at:\s*([^<\n]+)/i);
+  if (readAtMatch) {
+    const readAtStr = readAtMatch[1].trim();
+    // Only set if it's not empty
+    if (readAtStr && readAtStr.length > 0) {
+      result.readAt = readAtStr;
+    }
+  }
+  
+  // Extract rating (user's rating, not average)
+  const ratingMatch = description.match(/rating:\s*(\d+(?:\.\d+)?)/i);
+  if (ratingMatch) {
+    const ratingValue = parseFloat(ratingMatch[1]);
+    if (ratingValue > 0) {
+      result.rating = ratingValue;
+    }
+  }
+  
+  // Extract cover image from <img> tag
   const imgMatch = description.match(/<img[^>]*src=["']([^"']+)["']/i);
-  return imgMatch ? imgMatch[1] : null;
+  if (imgMatch) {
+    result.coverUrl = imgMatch[1];
+  }
+  
+  return result;
 }
 
 // ─── Letterboxd ───

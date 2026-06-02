@@ -6,7 +6,6 @@ export type GoodreadsBook = {
 
 export type LetterboxdFilm = {
     title: string;
-    description?: string | null;
     link?: string | null;
     posterUrl?: string | null;
     rating?: string | null;

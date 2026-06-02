@@ -178,14 +178,13 @@ export default function MediaSection({
                                         <div className="media-info">
                                             <div className="media-title-row">
                                                 <h4>{film.title}</h4>
-                                                {film.rating && (
+                                            </div>
+                                            <div className="media-creator">
+                                               {film.rating && (
                                                     <span className="media-rating">
                                                         {film.rating}
                                                     </span>
                                                 )}
-                                            </div>
-                                            <div className="media-creator">
-                                                {film.description ?? "description"}
                                             </div>
                                         </div>
                                     </div>

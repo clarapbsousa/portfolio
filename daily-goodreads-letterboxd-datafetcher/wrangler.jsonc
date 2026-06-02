@@ -29,8 +29,8 @@
     }
   ],
   "vars": {
-    "GOODREADS_USER_ID": "https://www.goodreads.com/review/list_rss/144450064",
-    "LETTERBOXD_USERNAME": "https://letterboxd.com/clarapbsousa/rss/",
+    "GOODREADS_RSS_URL": "https://www.goodreads.com/review/list_rss/144450064",
+    "LETTERBOXD_RSS_URL": "https://letterboxd.com/clarapbsousa/rss/",
     "PAGES_DEPLOY_HOOK_URL": "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/84dfeec1-d70a-495a-8ad5-29d01a32f1d4"
   },
   "triggers": {

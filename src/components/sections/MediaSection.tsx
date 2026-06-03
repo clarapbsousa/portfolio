@@ -21,7 +21,7 @@ export default function MediaSection({
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">
-                        Books & Movies <span className="section-number">(04)</span>
+                        Books & Movies <span className="section-number">(03)</span>
                     </h2>
                     <span className="section-note">What shapes my thinking</span>
                 </div>

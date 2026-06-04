@@ -4,7 +4,7 @@ export default function ProjectsSection() {
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">
-                        Selected Projects <span className="section-number">(03)</span>
+                        Selected Projects
                     </h2>
                     <a href="https://github.com/clarapbsousa" className="section-link">
                         View All on GitHub →

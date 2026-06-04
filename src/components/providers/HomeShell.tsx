@@ -5,10 +5,10 @@ import { SectionId, NavItem } from "@/types";
 import Header from "@/components/layout/Header";
 
 const navItems: NavItem[] = [
-    { id: "about", label: "About", icon: "01" },
-    { id: "projects", label: "Projects", icon: "02" },
-    { id: "media", label: "Books & Films", icon: "03" },
-    { id: "contact", label: "Contact", icon: "04" },
+    { id: "about", label: "About"},
+    { id: "projects", label: "Projects" },
+    { id: "media", label: "Books & Films" },
+    { id: "contact", label: "Contact"},
 ];
 
 type HomeShellProps = {

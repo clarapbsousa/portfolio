@@ -6,7 +6,7 @@ type HeaderProps = {
 	name: string;
 	roleLineOne: string;
 	roleLineTwo: string;
-	navItems: Array<{ id: SectionId; label: string; icon: string }>;
+	navItems: Array<{ id: SectionId; label: string}>;
 	activeSection: SectionId;
 	isMenuOpen: boolean;
 	onToggleMenu: () => void;
@@ -66,7 +66,6 @@ export default function Header({
 									}`}
 									onClick={() => onNavClick(item.id)}
 								>
-									<span className="nav-icon">{item.icon}</span>
 									{item.label}
 								</a>
 							</li>

@@ -22,4 +22,4 @@ export type LetterboxdPayload = {
 
 export type SectionId = "about" | "projects" | "media" | "contact";
 
-export type NavItem = { id: SectionId; label: string; icon: string };
+export type NavItem = { id: SectionId; label: string };

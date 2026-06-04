@@ -23,3 +23,5 @@ export type LetterboxdPayload = {
 export type SectionId = "about" | "projects" | "media" | "contact";
 
 export type NavItem = { id: SectionId; label: string };
+
+export type Locale = "en-us" | "pt-pt" | "de-de" | "da-dk";

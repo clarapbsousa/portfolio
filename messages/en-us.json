@@ -1,0 +1,73 @@
+{
+  "Header": {
+    "toggleNavigation": "Toggle navigation",
+    "closeNavigation": "Close navigation",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads",
+    "roleLineOne": "MSc Computer Science @ UCPH",
+    "roleLineTwo": "Software Engineer · FEUP Graduate"
+  },
+  "Nav": {
+    "about": "About",
+    "projects": "Projects",
+    "media": "Books & Films",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "copyright": "© 2026 Clara Sousa"
+  },
+  "Hero": {
+    "title": "Building software with intention",
+    "subtitle": "Software Engineer with a Computer Engineering degree from FEUP and currently pursuing a Master's in CS (Machine Learning) at UCPH, I build accessible, maintainable interfaces while leveraging data and AI to shape smarter, more human-centered products.",
+    "sendEmail": "Send Email",
+    "myResume": "My Resume",
+    "codeName": "Clara",
+    "codeSeeking": "Opportunities to grow"
+  },
+  "Projects": {
+    "title": "Selected Projects",
+    "viewAll": "View All on GitHub →",
+    "populiDesc": "A platform to help citizens find concise, structured, and unbiased information about the politicians they elect. Features include deputy profiles, legislative proposals, and an AI chat assistant for better-informed political opinions.",
+    "cherryPickDesc": "Cross-format cultural recommendation platform. Users input a book, movie, show, or album and receive curated picks across media types. Hackathon prototype with a full redesign in progress.",
+    "twoAuctionDesc": "Web application that brings live auction dynamics online, enabling users to buy and sell items with a secure, interactive experience for bidders and sellers.",
+    "source": "GitHub",
+    "website": "Website",
+    "year": "2025"
+  },
+  "Media": {
+    "title": "Books & Movies",
+    "subtitle": "What shapes my thinking",
+    "currentlyReading": "📚 Currently Reading",
+    "recentlyRead": "Recently Read",
+    "recentlyWatched": "🎬 Recently Watched",
+    "bookPlaceholder": "BOOK",
+    "filmPlaceholder": "FILM",
+    "goodreadsUnavailable": "Goodreads unavailable",
+    "goodreadsUnavailableSub": "Currently, it is not possible to load books from Goodreads.",
+    "noBooksFound": "No books found",
+    "updateGoodreads": "Update your Goodreads shelf",
+    "noRecentReads": "No recent reads yet",
+    "updateReadShelf": "Update your Goodreads read shelf",
+    "letterboxdUnavailable": "Letterboxd unavailable",
+    "letterboxdUnavailableSub": "Currently, it is not possible to load films from Letterboxd.",
+    "noFilmsFound": "No films found",
+    "updateLetterboxd": "Update your Letterboxd diary"
+  },
+  "Contact": {
+    "title": "Let's work together",
+    "reachOut": "Feel free to reach out at",
+    "checkOut": "Check out my GitHub and LinkedIn to see my work, or visit my Goodreads and Letterboxd to see what movies and books I'm enjoying.",
+    "github": "GitHub",
+    "linkedin": "Linkedin",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads"
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "portuguese": "Português",
+    "german": "Deutsch",
+    "danish": "Dansk"
+  }
+}

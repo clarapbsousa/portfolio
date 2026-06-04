@@ -1,0 +1,73 @@
+{
+  "Header": {
+    "toggleNavigation": "Alternar navegação",
+    "closeNavigation": "Fechar navegação",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads",
+    "roleLineOne": "Mestrado em Ciência da Computação @ UCPH",
+    "roleLineTwo": "Engenheira de Software · Licenciada FEUP"
+  },
+  "Nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "media": "Livros & Filmes",
+    "contact": "Contacto"
+  },
+  "Footer": {
+    "copyright": "© 2026 Clara Sousa"
+  },
+  "Hero": {
+    "title": "A construir software com intenção",
+    "subtitle": "Engenheira de Software com uma licenciatura em Engenharia Informática pela FEUP e um Mestrado em Ciência da Computação (Machine Learning) na Universidade de Copenhaga (UCPH), construo interfaces acessíveis e sustentáveis enquanto aproveito dados e IA para criar produtos mais inteligentes e centrados nas pessoas.",
+    "sendEmail": "Enviar Email",
+    "myResume": "O Meu CV",
+    "codeName": "Clara",
+    "codeSeeking": "Oportunidades para crescer"
+  },
+  "Projects": {
+    "title": "Projetos Selecionados",
+    "viewAll": "Ver Todos no GitHub →",
+    "populiDesc": "Uma plataforma para ajudar os cidadãos a encontrar informação concisa, estruturada e imparcial sobre os políticos que elegem. Inclui perfis de deputados, propostas legislativas e um assistente de chat com IA para opiniões políticas mais informadas.",
+    "cherryPickDesc": "Plataforma de recomendação cultural multi-formato. Os utilizadores inserem um livro, filme, série ou álbum e recebem sugestões curadas noutros formatos. Protótipo de hackathon com um redesenho completo em progresso.",
+    "twoAuctionDesc": "Aplicação web que traz a dinâmica de leilões ao vivo para o mundo digital, permitindo aos utilizadores comprar e vender itens com uma experiência segura e interativa para licitantes e vendedores.",
+    "source": "GitHub",
+    "website": "Website",
+    "year": "2025"
+  },
+  "Media": {
+    "title": "Livros & Filmes",
+    "subtitle": "O que molda o meu pensamento",
+    "currentlyReading": "📚 A Ler Atualmente",
+    "recentlyRead": "Lido Recentemente",
+    "recentlyWatched": "🎬 Visto Recentemente",
+    "bookPlaceholder": "LIVRO",
+    "filmPlaceholder": "FILME",
+    "goodreadsUnavailable": "Goodreads indisponível",
+    "goodreadsUnavailableSub": "De momento, não foi possível carregar os livros do Goodreads.",
+    "noBooksFound": "Nenhum livro encontrado",
+    "updateGoodreads": "Atualiza a tua estante do Goodreads",
+    "noRecentReads": "Ainda sem leituras recentes",
+    "updateReadShelf": "Atualiza a tua estante de lidos do Goodreads",
+    "letterboxdUnavailable": "Letterboxd indisponível",
+    "letterboxdUnavailableSub": "De momento, não foi possível carregar os filmes do Letterboxd.",
+    "noFilmsFound": "Nenhum filme encontrado",
+    "updateLetterboxd": "Atualiza o teu diário do Letterboxd"
+  },
+  "Contact": {
+    "title": "Vamos trabalhar juntos",
+    "reachOut": "Não hesites em contactar-me em",
+    "checkOut": "Consulta o meu GitHub e LinkedIn para ver o meu trabalho, ou visita o Goodreads e o Letterboxd para ver os filmes e livros que estou ando a ver e ler.",
+    "github": "GitHub",
+    "linkedin": "Linkedin",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads"
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "portuguese": "Português",
+    "german": "Deutsch",
+    "danish": "Dansk"
+  }
+}

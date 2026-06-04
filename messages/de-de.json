@@ -1,0 +1,73 @@
+{
+  "Header": {
+    "toggleNavigation": "Navigation umschalten",
+    "closeNavigation": "Navigation schließen",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads",
+    "roleLineOne": "Master in Informatik @ UCPH",
+    "roleLineTwo": "Software Engineer · FEUP Absolventin"
+  },
+  "Nav": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "media": "Bücher & Filme",
+    "contact": "Kontakt"
+  },
+  "Footer": {
+    "copyright": "© 2026 Clara Sousa"
+  },
+  "Hero": {
+    "title": "Software mit Absicht entwickeln",
+    "subtitle": "Software Engineer mit einem Informatik-Abschluss der FEUP und einem laufenden Master in Informatik (Machine Learning) an der UCPH baue ich zugängliche, wartbare Interfaces und nutze dabei Daten und KI, um intelligentere, menschenzentrierte Produkte zu gestalten.",
+    "sendEmail": "E-Mail senden",
+    "myResume": "Mein Lebenslauf",
+    "codeName": "Clara",
+    "codeSeeking": "Möglichkeiten zum Wachsen"
+  },
+  "Projects": {
+    "title": "Ausgewählte Projekte",
+    "viewAll": "Alle auf GitHub ansehen →",
+    "populiDesc": "Eine Plattform, die Bürgern hilft, prägnante, strukturierte und unvoreingenommene Informationen über die Politiker zu finden, die sie wählen. Funktionen umfassen Abgeordnetenprofile, Gesetzesvorschläge und einen KI-Chat-Assistenten für besser informierte politische Meinungen.",
+    "cherryPickDesc": "Cross-Format-Kultur-Recommendations-Plattform. Nutzer geben ein Buch, einen Film, eine Serie oder ein Album ein und erhalten kuratierte Empfehlungen über alle Medienformate hinweg. Hackathon-Prototyp mit einem vollständigen Redesign in Arbeit.",
+    "twoAuctionDesc": "Webanwendung, die Live-Auktionsdynamiken online bringt und es Nutzern ermöglicht, Gegenstände sicher und interaktiv zu kaufen und zu verkaufen.",
+    "source": "GitHub",
+    "website": "Website",
+    "year": "2025"
+  },
+  "Media": {
+    "title": "Bücher & Filme",
+    "subtitle": "Was mein Denken prägt",
+    "currentlyReading": "📚 Aktuell gelesen",
+    "recentlyRead": "Kürzlich gelesen",
+    "recentlyWatched": "🎬 Kürzlich gesehen",
+    "bookPlaceholder": "BUCH",
+    "filmPlaceholder": "FILM",
+    "goodreadsUnavailable": "Goodreads nicht verfügbar",
+    "goodreadsUnavailableSub": "Derzeit ist es nicht möglich, Bücher von Goodreads zu laden.",
+    "noBooksFound": "Keine Bücher gefunden",
+    "updateGoodreads": "Aktualisiere dein Goodreads-Regal",
+    "noRecentReads": "Noch keine kürzlichen Lesungen",
+    "updateReadShelf": "Aktualisiere dein Goodreads-Leseregal",
+    "letterboxdUnavailable": "Letterboxd nicht verfügbar",
+    "letterboxdUnavailableSub": "Derzeit ist es nicht möglich, Filme von Letterboxd zu laden.",
+    "noFilmsFound": "Keine Filme gefunden",
+    "updateLetterboxd": "Aktualisiere dein Letterboxd-Tagebuch"
+  },
+  "Contact": {
+    "title": "Lass uns zusammenarbeiten",
+    "reachOut": "Zögere nicht, mich zu kontaktieren unter",
+    "checkOut": "Schau dir mein GitHub und LinkedIn an, um meine Arbeit zu sehen, oder besuche Goodreads und Letterboxd, um zu sehen, welche Filme und Bücher ich gerade genieße.",
+    "github": "GitHub",
+    "linkedin": "Linkedin",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads"
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "portuguese": "Português",
+    "german": "Deutsch",
+    "danish": "Dansk"
+  }
+}

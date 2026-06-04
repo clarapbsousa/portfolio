@@ -1,0 +1,73 @@
+{
+  "Header": {
+    "toggleNavigation": "Skift navigation",
+    "closeNavigation": "Luk navigation",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads",
+    "roleLineOne": "Kandidat i Datalogi @ UCPH",
+    "roleLineTwo": "Software Engineer · Dimitteret fra FEUP"
+  },
+  "Nav": {
+    "about": "Om mig",
+    "projects": "Projekter",
+    "media": "Bøger & Film",
+    "contact": "Kontakt"
+  },
+  "Footer": {
+    "copyright": "© 2026 Clara Sousa"
+  },
+  "Hero": {
+    "title": "At bygge software med intention",
+    "subtitle": "Software Engineer med en grad i Computeringeniør fra FEUP og en kandidat i Datalogi (Maskinlæring) undervejs ved UCPH, bygger jeg tilgængelige, vedligeholdelsesvenlige grænseflader og udnytter data og AI til at forme klogere, mere menneskecentrerede produkter.",
+    "sendEmail": "Send e-mail",
+    "myResume": "Mit CV",
+    "codeName": "Clara",
+    "codeSeeking": "Muligheder for at vokse"
+  },
+  "Projects": {
+    "title": "Udvalgte Projekter",
+    "viewAll": "Se alle på GitHub →",
+    "populiDesc": "En platform til at hjælpe borgere med at finde præcis, struktureret og upartisk information om de politikere, de vælger. Funktioner inkluderer deputetprofiler, lovforslag og en AI-chatassistent for bedre informerede politiske holdninger.",
+    "cherryPickDesc": "Cross-format kulturel anbefalingsplatform. Brugere indtaster en bog, film, serie eller album og modtager kuraterede valg på tværs af medietyper. Hackathon-prototype med et fuldt redesign i gang.",
+    "twoAuctionDesc": "Webapplikation der bringer live-auktionsdynamik online, og gør det muligt for brugere at købe og sælge genstande med en sikker, interaktiv oplevelse for bydere og sælgere.",
+    "source": "GitHub",
+    "website": "Website",
+    "year": "2025"
+  },
+  "Media": {
+    "title": "Bøger & Film",
+    "subtitle": "Hvad former min tankegang",
+    "currentlyReading": "📚 Læser i øjeblikket",
+    "recentlyRead": "Nyligt læst",
+    "recentlyWatched": "🎬 Nyligt set",
+    "bookPlaceholder": "BOG",
+    "filmPlaceholder": "FILM",
+    "goodreadsUnavailable": "Goodreads ikke tilgængelig",
+    "goodreadsUnavailableSub": "Det er i øjeblikket ikke muligt at overføre bøger fra Goodreads.",
+    "noBooksFound": "Ingen bøger fundet",
+    "updateGoodreads": "Opdater din Goodreads-hylde",
+    "noRecentReads": "Endnu ingen nylige læsninger",
+    "updateReadShelf": "Opdater din Goodreads læste-hylde",
+    "letterboxdUnavailable": "Letterboxd ikke tilgængelig",
+    "letterboxdUnavailableSub": "Det er i øjeblikket ikke muligt at overføre film fra Letterboxd.",
+    "noFilmsFound": "Ingen film fundet",
+    "updateLetterboxd": "Opdater din Letterboxd-dagbog"
+  },
+  "Contact": {
+    "title": "Lad os arbejde sammen",
+    "reachOut": "Tøv ikke med at kontakte mig på",
+    "checkOut": "Tjek mit GitHub og LinkedIn for at se mit arbejde, eller besøg Goodreads og Letterboxd for at se, hvilke film og bøger jeg nyder.",
+    "github": "GitHub",
+    "linkedin": "Linkedin",
+    "letterboxd": "Letterboxd",
+    "goodreads": "Goodreads"
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "portuguese": "Português",
+    "german": "Deutsch",
+    "danish": "Dansk"
+  }
+}

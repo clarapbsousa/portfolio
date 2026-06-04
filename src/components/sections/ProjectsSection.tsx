@@ -1,13 +1,19 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function ProjectsSection() {
+    const t = useTranslations("Projects");
+
     return (
         <section id="projects">
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">
-                        Selected Projects
+                        {t("title")}
                     </h2>
                     <a href="https://github.com/clarapbsousa" className="section-link">
-                        View All on GitHub →
+                        {t("viewAll")}
                     </a>
                 </div>
 
@@ -16,9 +22,7 @@ export default function ProjectsSection() {
                     <div className="project-content">
                       <h3>Populi</h3>
                       <p className="project-desc">
-                        A platform to help citizens find concise, structured, and unbiased information
-                        about the politicians they elect. Features include deputy profiles, legislative
-                        proposals, and an AI chat assistant for better-informed political opinions.
+                        {t("populiDesc")}
                       </p>
                       <div className="project-tech">
                         <span className="tech-tag">TypeScript</span>
@@ -28,10 +32,13 @@ export default function ProjectsSection() {
                       </div>
                     </div>
                     <div className="project-meta">
-                      <span className="project-year">2025</span>
+                      <span className="project-year">{t("year")}</span>
                       <div className="project-links">
+                        <a href="https://populi.henriquesf.me/" className="project-link">
+                          {t("website")}
+                        </a>
                         <a href="https://github.com/Populi-Org/populi" className="project-link">
-                          Source
+                          {t("source")}
                         </a>
                       </div>
                     </div>
@@ -41,10 +48,7 @@ export default function ProjectsSection() {
                     <div className="project-content">
                       <h3>CherryPick</h3>
                       <p className="project-desc">
-                        Cross-format cultural recommendation platform. Users input a
-                        book, movie, show, or album and receive curated picks across
-                        media types. Hackathon prototype with a full redesign in
-                        progress.
+                        {t("cherryPickDesc")}
                       </p>
                       <div className="project-tech">
                         <span className="tech-tag">TypeScript</span>
@@ -54,10 +58,10 @@ export default function ProjectsSection() {
                       </div>
                     </div>
                     <div className="project-meta">
-                      <span className="project-year">2025</span>
+                      <span className="project-year">{t("year")}</span>
                       <div className="project-links">
                         <a href="https://github.com/HenriqueSFernandes/CherryPick" className="project-link">
-                          Source
+                          {t("source")}
                         </a>
                       </div>
                     </div>
@@ -67,9 +71,7 @@ export default function ProjectsSection() {
                         <div className="project-content">
                             <h3>2Auction</h3>
                             <p className="project-desc">
-                                Web application that brings live auction dynamics online,
-                                enabling users to buy and sell items with a secure,
-                                interactive experience for bidders and sellers.
+                                {t("twoAuctionDesc")}
                             </p>
                             <div className="project-tech">
                                 <span className="tech-tag">PHP</span>
@@ -79,13 +81,13 @@ export default function ProjectsSection() {
                             </div>
                         </div>
                         <div className="project-meta">
-                            <span className="project-year">2025</span>
+                            <span className="project-year">{t("year")}</span>
                             <div className="project-links">
                                 <a
                                     href="https://github.com/clarapbsousa/2Auction"
                                     className="project-link"
                                 >
-                                    Source
+                                    {t("source")}
                                 </a>
                             </div>
                         </div>

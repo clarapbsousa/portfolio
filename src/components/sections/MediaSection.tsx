@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { GoodreadsBook, LetterboxdFilm } from "@/types";
 
 type MediaSectionProps = {
@@ -16,29 +19,31 @@ export default function MediaSection({
     goodreadsError,
     letterboxdError,
 }: MediaSectionProps) {
+    const t = useTranslations("Media");
+
     return (
         <section id="media" className="media-section">
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">
-                        Books & Movies
+                        {t("title")}
                     </h2>
-                    <span className="section-note">What shapes my thinking</span>
+                    <span className="section-note">{t("subtitle")}</span>
                 </div>
 
                 <div className="media-grid">
                     <div className="media-category">
                         <h3>
-                            <span className="media-icon">📚</span> Currently Reading
+                            <span className="media-icon">📚</span> {t("currentlyReading")}
                         </h3>
                         <div className="book-list">
                             {goodreadsError && (
                                 <div className="media-item">
-                                    <div className="media-thumb">BOOK</div>
+                                    <div className="media-thumb">{t("bookPlaceholder")}</div>
                                     <div className="media-info">
-                                        <h4>Goodreads unavailable</h4>
+                                        <h4>{t("goodreadsUnavailable")}</h4>
                                         <div className="media-creator">
-                                            Check your credentials or try again later
+                                            {t("goodreadsUnavailableSub")}
                                         </div>
                                     </div>
                                 </div>
@@ -46,11 +51,11 @@ export default function MediaSection({
 
                             {!goodreadsError && goodreadsBooks.length === 0 && (
                                 <div className="media-item">
-                                    <div className="media-thumb">BOOK</div>
+                                    <div className="media-thumb">{t("bookPlaceholder")}</div>
                                     <div className="media-info">
-                                        <h4>No books found</h4>
+                                        <h4>{t("noBooksFound")}</h4>
                                         <div className="media-creator">
-                                            Update your Goodreads shelf
+                                            {t("updateGoodreads")}
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +76,7 @@ export default function MediaSection({
                                                 height={70}
                                             />
                                         ) : (
-                                            <div className="media-thumb">BOOK</div>
+                                            <div className="media-thumb">{t("bookPlaceholder")}</div>
                                         )}
                                         <div className="media-info">
                                             <h4>{book.title}</h4>
@@ -85,15 +90,15 @@ export default function MediaSection({
 
                         <div className="book-divider" />
 
-                        <h4 className="media-subtitle">Recently Read</h4>
+                        <h4 className="media-subtitle">{t("recentlyRead")}</h4>
                         <div className="book-list">
                             {!goodreadsError && recentlyReadBooks.length === 0 && (
                                 <div className="media-item">
-                                    <div className="media-thumb">BOOK</div>
+                                    <div className="media-thumb">{t("bookPlaceholder")}</div>
                                     <div className="media-info">
-                                        <h4>No recent reads yet</h4>
+                                        <h4>{t("noRecentReads")}</h4>
                                         <div className="media-creator">
-                                            Update your Goodreads read shelf
+                                            {t("updateReadShelf")}
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +119,7 @@ export default function MediaSection({
                                                 height={70}
                                             />
                                         ) : (
-                                            <div className="media-thumb">BOOK</div>
+                                            <div className="media-thumb">{t("bookPlaceholder")}</div>
                                         )}
                                         <div className="media-info">
                                             <h4>{book.title}</h4>
@@ -129,16 +134,16 @@ export default function MediaSection({
 
                     <div className="media-category">
                         <h3>
-                            <span className="media-icon">🎬</span> Recently Watched
+                            <span className="media-icon">🎬</span> {t("recentlyWatched")}
                         </h3>
                         <div className="movie-list">
                             {letterboxdError && (
                                 <div className="media-item">
-                                    <div className="media-thumb">FILM</div>
+                                    <div className="media-thumb">{t("filmPlaceholder")}</div>
                                     <div className="media-info">
-                                        <h4>Letterboxd unavailable</h4>
+                                        <h4>{t("letterboxdUnavailable")}</h4>
                                         <div className="media-creator">
-                                            Check your RSS URL or try again later
+                                            {t("letterboxdUnavailableSub")}
                                         </div>
                                     </div>
                                 </div>
@@ -146,11 +151,11 @@ export default function MediaSection({
 
                             {!letterboxdError && letterboxdFilms.length === 0 && (
                                 <div className="media-item">
-                                    <div className="media-thumb">FILM</div>
+                                    <div className="media-thumb">{t("filmPlaceholder")}</div>
                                     <div className="media-info">
-                                        <h4>No films found</h4>
+                                        <h4>{t("noFilmsFound")}</h4>
                                         <div className="media-creator">
-                                            Update your Letterboxd diary
+                                            {t("updateLetterboxd")}
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +178,7 @@ export default function MediaSection({
                                             
                                         ) : (
                                             
-                                            <div className="media-thumb media-thumb--movie">FILM</div>
+                                            <div className="media-thumb media-thumb--movie">{t("filmPlaceholder")}</div>
                                         )}
                                         <div className="media-info">
                                             <div className="media-title-row">

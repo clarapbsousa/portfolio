@@ -1,17 +1,21 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 const emailAddress = "clara.barros.sousa@gmail.com";
 const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
 
 export default function HeroSection() {
+    const t = useTranslations("Hero");
+
     return (
         <section id="about" className="hero">
             <div className="container">
                 <div className="hero-grid">
                     <div>
-                        <h1>Building software with intention</h1>
+                        <h1>{t("title")}</h1>
                         <p className="hero-subtitle">
-                          Computer Engineering student @FEUP with experience building accessible, 
-                          maintainable user interfaces, and a strong interest in data, machine learning, 
-                          and AI to create smarter, user-centered products.
+                            {t("subtitle")}
                         </p>
                         <div className="quick-info">
                           <div className="contact-actions">
@@ -20,14 +24,14 @@ export default function HeroSection() {
                                 className="btn btn-primary"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                            >Send Email</a>
+                            >{t("sendEmail")}</a>
                               <a
                                 href="/CV_ClaraSousa.pdf"
                                 className="btn"
                                 download="CV_ClaraSousa.pdf"
                                 aria-label="Download Clara Sousa CV"
                               >
-                                My Resume
+                                {t("myResume")}
                               </a>
                           </div>
                         </div>
@@ -45,7 +49,7 @@ export default function HeroSection() {
                             &nbsp;&nbsp;constructor() {"{"}
                             <br />
                               &nbsp;&nbsp;&nbsp;&nbsp;this.name ={" "}
-                              <span className="code-string">&quot;Clara&quot;</span>;<br />
+                              <span className="code-string">&quot;{t("codeName")}&quot;</span>;<br />
                               &nbsp;&nbsp;&nbsp;&nbsp;this.stack = [{" "}
                               <span className="code-string">&quot;TypeScript&quot;</span>,{" "}
                               <span className="code-string">&quot;C++&quot;</span>,{" "}
@@ -63,7 +67,7 @@ export default function HeroSection() {
                             &nbsp;&nbsp;&nbsp;&nbsp;
                               <span className="code-keyword">return</span>{" "}
                             <span className="code-string">
-                                &quot;Opportunities to grow&quot;
+                                &quot;{t("codeSeeking")}&quot;
                             </span>;
                             <br />
                             &nbsp;&nbsp;{"}"}

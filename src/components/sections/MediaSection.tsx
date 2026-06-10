@@ -34,7 +34,7 @@ export default function MediaSection({
                 <div className="media-grid">
                     <div className="media-category">
                         <h3>
-                            <span className="media-icon">📚</span> {t("currentlyReading")}
+                            {t("currentlyReading")}
                         </h3>
                         <div className="book-list">
                             {goodreadsError && (
@@ -134,7 +134,7 @@ export default function MediaSection({
 
                     <div className="media-category">
                         <h3>
-                            <span className="media-icon">🎬</span> {t("recentlyWatched")}
+                            {t("recentlyWatched")}
                         </h3>
                         <div className="movie-list">
                             {letterboxdError && (
